@@ -5,7 +5,8 @@ She needed a simple application which helps her preparing for her upcoming exam.
 
 ## Live Demo
 
-Soon...
+Basic demo with one dummy image
+[Demo](https://xray-memory-test.netlify.app)
 
 ## Tech Stack
 
@@ -13,3 +14,4 @@ Soon...
 - React
 - React Card Flip
 - TailwindCSS
+- Contentful - Future content (images and descriptions)

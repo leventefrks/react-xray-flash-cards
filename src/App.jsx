@@ -44,7 +44,7 @@ const App = () => {
             onClick={() => setToggle(!isToggle)}
             className="mt-4 bg-white border-black border-2 px-4 py-2 transition-colors duration-200 text-gray-900 text-sm rounded-sm"
           >
-            Gimme another X-ray
+            Gimme another X-Ray
           </button>
           {isToggle && (
             <div className="text-gray-900 py-2">
