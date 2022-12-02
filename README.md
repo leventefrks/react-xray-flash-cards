@@ -11,4 +11,5 @@ Soon...
 
 - Vite
 - React
+- React Card Flip
 - TailwindCSS
