@@ -7,7 +7,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className="w-full min-h-screen bg-gray-100 sm:px-4">
+      <div className="w-full min-h-screen bg-gray-100 px-2 sm:px-0">
         <h1 className="pt-4 text-4xl font-black text-gray-900 text-center">
           X-Ray Memory Test
         </h1>
@@ -35,14 +35,14 @@ const App = () => {
           <button
             type="button"
             onClick={() => setFlip(!isFlipped)}
-            className="mt-8 bg-gray-900 hover:bg-black transition-colors duration-200 px-4 py-2 text-white text-sm rounded-sm"
+            className="mt-4 bg-black border-bg-black border-2 px-4 py-2 text-white text-sm rounded-sm"
           >
             Show me the details
           </button>
           <button
             type="button"
             onClick={() => setToggle(!isToggle)}
-            className="mt-2 bg-white border-black hover:bg-black hover:text-white border-2 px-4 py-2 transition-colors duration-200 text-gray-900 text-sm rounded-sm"
+            className="mt-4 bg-white border-black border-2 px-4 py-2 transition-colors duration-200 text-gray-900 text-sm rounded-sm"
           >
             Gimme another X-ray
           </button>
