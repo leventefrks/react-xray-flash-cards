@@ -13,5 +13,6 @@ Basic demo with one dummy image
 - Vite
 - React
 - React Card Flip
+- React Icons
 - TailwindCSS
 - Contentful - Future content (images and descriptions)
