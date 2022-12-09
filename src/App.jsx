@@ -33,19 +33,19 @@ const App = () => {
 
               <div className="p-4 h-[500px] w-500 shadow-xl space-y-4 flex flex-col justify-center bg-white rounded-md text-left">
                 <div>
-                  <span className="font-bold text-md mr-3">Modalitás:</span>
+                  <span className="font-bold text-md mr-1">Modalitás:</span>
                   {data[0].modality}
                 </div>
                 <div>
-                  <span className="font-bold text-md mr-3">Régió:</span>
+                  <span className="font-bold text-md mr-1">Régió:</span>
                   {data[0].region}
                 </div>
                 <div>
-                  <span className="font-bold text-md mr-3">Radiológia:</span>
+                  <span className="font-bold text-md mr-1">Radiológia:</span>
                   {data[0].radiology}
                 </div>
                 <div>
-                  <span className="font-bold text-md mr-3">Diagnózis:</span>
+                  <span className="font-bold text-md mr-1">Diagnózis:</span>
                   {data[0].diagnose}
                 </div>
               </div>
