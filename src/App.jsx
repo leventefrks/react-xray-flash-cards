@@ -40,13 +40,16 @@ const App = () => {
           X-Ray Memory Test
         </h1>
         <div className="flex flex-col min-h-screen items-center justify-center">
-          <div className="max-w-[500px] w-full text-center">
+          <div className="max-w-[500px] w-full">
             <ReactCardFlip
               isFlipped={isFlipped}
               flipDirection="horizontal"
               cardZIndex="1"
             >
               <div className="p-4 h-[500px] w-500 shadow-xl bg-white rounded-md">
+                <span className="font-bold text-2xl text-left">
+                  {currentIndex}
+                </span>
                 <img
                   className="max-w-100 h-full object-contain rounded-sm"
                   src={
@@ -67,7 +70,9 @@ const App = () => {
                   {currentItem?.region && currentItem?.region}
                 </div>
                 <div>
-                  <span className="font-bold text-md mr-1">Radiológia:</span>
+                  <span className="font-bold text-md mr-1">
+                    Radiológiai jellemző:
+                  </span>
                   {currentItem?.radiology && currentItem?.radiology}
                 </div>
                 <div>
@@ -78,31 +83,28 @@ const App = () => {
             </ReactCardFlip>
           </div>
 
-          <button
-            type="button"
-            onClick={() => setFlip(!isFlipped)}
-            className="flex gap-2 items-center mt-4 bg-black border-bg-black border-2 px-4 py-2 text-white text-sm rounded-md"
-          >
-            <FiRotateCcw className="w-3 h-3" />
-            Show me the details
-          </button>
-          <button
-            type="button"
-            onClick={() =>
-              setCurrentIndex(prevIndex =>
-                items.length - 1 <= prevIndex ? 0 : prevIndex + 1
-              )
-            }
-            className="flex items-center gap-2 mt-4 bg-white border-black border-2 px-4 py-2 transition-colors duration-200 text-gray-900 text-sm rounded-md"
-          >
-            <GiCardRandom className="w-3 h-3" />
-            Gimme another X-Ray
-          </button>
-          {isToggle && (
-            <div className="text-gray-900 py-2">
-              This feature is not available yet! 😀
-            </div>
-          )}
+          <div className="flex flex-col gap-6 md:flex-row">
+            <button
+              type="button"
+              onClick={() => setFlip(!isFlipped)}
+              className="flex gap-2 items-center mt-4 bg-black border-bg-black border-2 px-4 py-2 text-white text-sm rounded-md"
+            >
+              <FiRotateCcw className="w-4 h-4" />
+              Show me the details
+            </button>
+            <button
+              type="button"
+              onClick={() =>
+                setCurrentIndex(prevIndex =>
+                  items.length - 1 <= prevIndex ? 0 : prevIndex + 1
+                )
+              }
+              className="flex items-center gap-2 mt-4 bg-white border-black border-2 px-4 py-2 transition-colors duration-200 text-gray-900 text-sm rounded-md"
+            >
+              <GiCardRandom className="w-4 h-4" />
+              Gimme another X-Ray
+            </button>
+          </div>
         </div>
       </div>
     </div>

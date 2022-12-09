@@ -15,5 +15,4 @@ Basic demo with one dummy image
 - React Card Flip
 - React Icons
 - TailwindCSS
-- Cloudinary (Images)
-- Contentful (Xray descriptions)
+- Contentful (Xray images & descriptions)
