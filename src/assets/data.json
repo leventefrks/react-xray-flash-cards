@@ -5,5 +5,138 @@
     "region": "mellkas, tüdő",
     "radiology": "Csökkent transzparencia a jobb tüdőbasisnál, a kontúr meniscus alakú (sárga vonal), a mediastinum érdemben nem tolódik el. A diaphragma és lateralis sinus a jobb oldalon nem differenciálható, bal oldalon kissé magasabban áll a rekesz.",
     "diagnose": "Jobb oldali hydrothorax"
+  },
+  {
+    "image": "image_2.png",
+    "modality": "FDG PET-CT (bal kép: hibrid kép; jobb kép: natív CT); 18(F)-fluoro-deoxi-glükóz",
+    "region": "máj, axialis sík",
+    "radiology": "fokozott fokális felvétel a májban (sárga nyíl); fiziológiás tracer-halmozós a jobb vesében (kék nyíl); natív CT vizsgálaton a tumor alig sejthető hypodensitásként ábrázolódik (sárga nyíl)",
+    "diagnose": "malignus tumor (colorectalis adenocc. metastasis) a májban; fiziológiás kiválasztás és radiotracer jeladás vesében"
+  },
+  {
+    "image": "image_3.png",
+    "modality": "FLAIR (bal) és DWI (jobb) MR, kontraszt nélküli szekvenciák",
+    "region": "koponya, axiális sík",
+    "radiology": "gátolt diffúziót mutató (cytotoxikus ödéma) hiperintenz elváltozás a bazális ganglionok területén a jobb oldalon",
+    "diagnose": "kis kiterjedésű acut infarktus"
+  },
+  {
+    "image": "image_4.png",
+    "modality": "PA (bal kép) és jobb filmközeli oldal (jobb kép) mellkasröntgen; keménysugár technika (120–140 kV)",
+    "region": "mellkas, tüdő",
+    "radiology": "Csökkent transzparencia a jobb tüdőbasisnál, a kontúr meniscus alakú (sárga vonal), a mediastinum érdemben nem tolódik el. A diaphragma és lateralis sinus a jobb oldalon nem differenciálható, bal oldalon kissé magasabban áll a rekesz.",
+    "diagnose": "Jobb oldali hydrothorax"
+  },
+  {
+    "image": "image_5.png",
+    "modality": "iv. kontrasztanyagos fej-nyak CT, bal kép – axiális sík; jobb kép – coronalis nézet, iv. jódalapú kontrasztanyag",
+    "region": "fej és nyak, axiális (bal) és coronális (jobb) nézetek",
+    "radiology": "jobb oldali submandibularis folyadékgyülem (denzitása: 0-10 HU), vastag, halmozó fallal (sárga nyíl).",
+    "diagnose": "nyaki abscessus (anamnézisben egy héttel korábban bölcsességfog eltávolítás)"
+  },
+  {
+    "image": "image_6.png",
+    "modality": "PA (bal kép) és jobb filmközeli oldal (jobb kép) mellkasröntgen; keménysugár technika (120–140 kV)",
+    "region": "mellkas, tüdő",
+    "radiology": "Csökkent transzparencia a jobb tüdőbasisnál, a kontúr meniscus alakú (sárga vonal), a mediastinum érdemben nem tolódik el. A diaphragma és lateralis sinus a jobb oldalon nem differenciálható, bal oldalon kissé magasabban áll a rekesz.",
+    "diagnose": "Jobb oldali hydrothorax"
+  },
+  {
+    "image": "image_7.png",
+    "modality": "PA (bal kép) és jobb filmközeli oldal (jobb kép) mellkasröntgen; keménysugár technika (120–140 kV)",
+    "region": "mellkas, tüdő",
+    "radiology": "Csökkent transzparencia a jobb tüdőbasisnál, a kontúr meniscus alakú (sárga vonal), a mediastinum érdemben nem tolódik el. A diaphragma és lateralis sinus a jobb oldalon nem differenciálható, bal oldalon kissé magasabban áll a rekesz.",
+    "diagnose": "Jobb oldali hydrothorax"
+  },
+  {
+    "image": "image_8.png",
+    "modality": "PA (bal kép) és jobb filmközeli oldal (jobb kép) mellkasröntgen; keménysugár technika (120–140 kV)",
+    "region": "mellkas, tüdő",
+    "radiology": "Csökkent transzparencia a jobb tüdőbasisnál, a kontúr meniscus alakú (sárga vonal), a mediastinum érdemben nem tolódik el. A diaphragma és lateralis sinus a jobb oldalon nem differenciálható, bal oldalon kissé magasabban áll a rekesz.",
+    "diagnose": "Jobb oldali hydrothorax"
+  },
+  {
+    "image": "image_9.png",
+    "modality": "PA (bal kép) és jobb filmközeli oldal (jobb kép) mellkasröntgen; keménysugár technika (120–140 kV)",
+    "region": "mellkas, tüdő",
+    "radiology": "Csökkent transzparencia a jobb tüdőbasisnál, a kontúr meniscus alakú (sárga vonal), a mediastinum érdemben nem tolódik el. A diaphragma és lateralis sinus a jobb oldalon nem differenciálható, bal oldalon kissé magasabban áll a rekesz.",
+    "diagnose": "Jobb oldali hydrothorax"
+  },
+  {
+    "image": "image_10.png",
+    "modality": "PA (bal kép) és jobb filmközeli oldal (jobb kép) mellkasröntgen; keménysugár technika (120–140 kV)",
+    "region": "mellkas, tüdő",
+    "radiology": "Csökkent transzparencia a jobb tüdőbasisnál, a kontúr meniscus alakú (sárga vonal), a mediastinum érdemben nem tolódik el. A diaphragma és lateralis sinus a jobb oldalon nem differenciálható, bal oldalon kissé magasabban áll a rekesz.",
+    "diagnose": "Jobb oldali hydrothorax"
+  },
+  {
+    "image": "image_11.png",
+    "modality": "PA (bal kép) és jobb filmközeli oldal (jobb kép) mellkasröntgen; keménysugár technika (120–140 kV)",
+    "region": "mellkas, tüdő",
+    "radiology": "Csökkent transzparencia a jobb tüdőbasisnál, a kontúr meniscus alakú (sárga vonal), a mediastinum érdemben nem tolódik el. A diaphragma és lateralis sinus a jobb oldalon nem differenciálható, bal oldalon kissé magasabban áll a rekesz.",
+    "diagnose": "Jobb oldali hydrothorax"
+  },
+  {
+    "image": "image_12.png",
+    "modality": "PA (bal kép) és jobb filmközeli oldal (jobb kép) mellkasröntgen; keménysugár technika (120–140 kV)",
+    "region": "mellkas, tüdő",
+    "radiology": "Csökkent transzparencia a jobb tüdőbasisnál, a kontúr meniscus alakú (sárga vonal), a mediastinum érdemben nem tolódik el. A diaphragma és lateralis sinus a jobb oldalon nem differenciálható, bal oldalon kissé magasabban áll a rekesz.",
+    "diagnose": "Jobb oldali hydrothorax"
+  },
+  {
+    "image": "image_13.png",
+    "modality": "PA (bal kép) és jobb filmközeli oldal (jobb kép) mellkasröntgen; keménysugár technika (120–140 kV)",
+    "region": "mellkas, tüdő",
+    "radiology": "Csökkent transzparencia a jobb tüdőbasisnál, a kontúr meniscus alakú (sárga vonal), a mediastinum érdemben nem tolódik el. A diaphragma és lateralis sinus a jobb oldalon nem differenciálható, bal oldalon kissé magasabban áll a rekesz.",
+    "diagnose": "Jobb oldali hydrothorax"
+  },
+  {
+    "image": "image_14.png",
+    "modality": "PA (bal kép) és jobb filmközeli oldal (jobb kép) mellkasröntgen; keménysugár technika (120–140 kV)",
+    "region": "mellkas, tüdő",
+    "radiology": "Csökkent transzparencia a jobb tüdőbasisnál, a kontúr meniscus alakú (sárga vonal), a mediastinum érdemben nem tolódik el. A diaphragma és lateralis sinus a jobb oldalon nem differenciálható, bal oldalon kissé magasabban áll a rekesz.",
+    "diagnose": "Jobb oldali hydrothorax"
+  },
+  {
+    "image": "image_15.png",
+    "modality": "PA (bal kép) és jobb filmközeli oldal (jobb kép) mellkasröntgen; keménysugár technika (120–140 kV)",
+    "region": "mellkas, tüdő",
+    "radiology": "Csökkent transzparencia a jobb tüdőbasisnál, a kontúr meniscus alakú (sárga vonal), a mediastinum érdemben nem tolódik el. A diaphragma és lateralis sinus a jobb oldalon nem differenciálható, bal oldalon kissé magasabban áll a rekesz.",
+    "diagnose": "Jobb oldali hydrothorax"
+  },
+  {
+    "image": "image_16.png",
+    "modality": "PA (bal kép) és jobb filmközeli oldal (jobb kép) mellkasröntgen; keménysugár technika (120–140 kV)",
+    "region": "mellkas, tüdő",
+    "radiology": "Csökkent transzparencia a jobb tüdőbasisnál, a kontúr meniscus alakú (sárga vonal), a mediastinum érdemben nem tolódik el. A diaphragma és lateralis sinus a jobb oldalon nem differenciálható, bal oldalon kissé magasabban áll a rekesz.",
+    "diagnose": "Jobb oldali hydrothorax"
+  },
+  {
+    "image": "image_17.png",
+    "modality": "PA (bal kép) és jobb filmközeli oldal (jobb kép) mellkasröntgen; keménysugár technika (120–140 kV)",
+    "region": "mellkas, tüdő",
+    "radiology": "Csökkent transzparencia a jobb tüdőbasisnál, a kontúr meniscus alakú (sárga vonal), a mediastinum érdemben nem tolódik el. A diaphragma és lateralis sinus a jobb oldalon nem differenciálható, bal oldalon kissé magasabban áll a rekesz.",
+    "diagnose": "Jobb oldali hydrothorax"
+  },
+  {
+    "image": "image_18.png",
+    "modality": "PA (bal kép) és jobb filmközeli oldal (jobb kép) mellkasröntgen; keménysugár technika (120–140 kV)",
+    "region": "mellkas, tüdő",
+    "radiology": "Csökkent transzparencia a jobb tüdőbasisnál, a kontúr meniscus alakú (sárga vonal), a mediastinum érdemben nem tolódik el. A diaphragma és lateralis sinus a jobb oldalon nem differenciálható, bal oldalon kissé magasabban áll a rekesz.",
+    "diagnose": "Jobb oldali hydrothorax"
+  },
+  {
+    "image": "image_19.png",
+    "modality": "PA (bal kép) és jobb filmközeli oldal (jobb kép) mellkasröntgen; keménysugár technika (120–140 kV)",
+    "region": "mellkas, tüdő",
+    "radiology": "Csökkent transzparencia a jobb tüdőbasisnál, a kontúr meniscus alakú (sárga vonal), a mediastinum érdemben nem tolódik el. A diaphragma és lateralis sinus a jobb oldalon nem differenciálható, bal oldalon kissé magasabban áll a rekesz.",
+    "diagnose": "Jobb oldali hydrothorax"
+  },
+  {
+    "image": "image_20.png",
+    "modality": "PA (bal kép) és jobb filmközeli oldal (jobb kép) mellkasröntgen; keménysugár technika (120–140 kV)",
+    "region": "mellkas, tüdő",
+    "radiology": "Csökkent transzparencia a jobb tüdőbasisnál, a kontúr meniscus alakú (sárga vonal), a mediastinum érdemben nem tolódik el. A diaphragma és lateralis sinus a jobb oldalon nem differenciálható, bal oldalon kissé magasabban áll a rekesz.",
+    "diagnose": "Jobb oldali hydrothorax"
   }
 ]

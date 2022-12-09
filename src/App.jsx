@@ -9,6 +9,7 @@ const data = DATA;
 const App = () => {
   const [isFlipped, setFlip] = useState(false);
   const [isToggle, setToggle] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
     <div className="App">
@@ -26,7 +27,7 @@ const App = () => {
               <div className="p-4 h-[500px] w-500 shadow-xl bg-white rounded-md">
                 <img
                   className="max-w-100 h-full object-contain rounded-sm"
-                  src={data[0].image}
+                  src={data[currentIndex].image}
                   alt=""
                 />
               </div>
@@ -34,19 +35,19 @@ const App = () => {
               <div className="p-4 h-[500px] w-500 shadow-xl space-y-4 flex flex-col justify-center bg-white rounded-md text-left">
                 <div>
                   <span className="font-bold text-md mr-1">Modalitás:</span>
-                  {data[0].modality}
+                  {data[currentIndex].modality && data[currentIndex].modality}
                 </div>
                 <div>
                   <span className="font-bold text-md mr-1">Régió:</span>
-                  {data[0].region}
+                  {data[currentIndex].region && data[currentIndex].region}
                 </div>
                 <div>
                   <span className="font-bold text-md mr-1">Radiológia:</span>
-                  {data[0].radiology}
+                  {data[currentIndex].radiology && data[currentIndex].radiology}
                 </div>
                 <div>
                   <span className="font-bold text-md mr-1">Diagnózis:</span>
-                  {data[0].diagnose}
+                  {data[currentIndex].diagnose && data[currentIndex].diagnose}
                 </div>
               </div>
             </ReactCardFlip>
@@ -62,7 +63,7 @@ const App = () => {
           </button>
           <button
             type="button"
-            onClick={() => setToggle(!isToggle)}
+            onClick={() => setCurrentIndex(prevIndex => prevIndex + 1)}
             className="flex items-center gap-2 mt-4 bg-white border-black border-2 px-4 py-2 transition-colors duration-200 text-gray-900 text-sm rounded-md"
           >
             <GiCardRandom className="w-3 h-3" /> Gimme another X-Ray
