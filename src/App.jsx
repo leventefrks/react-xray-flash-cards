@@ -2,6 +2,9 @@ import ReactCardFlip from 'react-card-flip';
 import { useState } from 'react';
 import { FiRotateCcw } from 'react-icons/fi';
 import { GiCardRandom } from 'react-icons/gi';
+import DATA from './assets/data.json';
+
+const data = DATA;
 
 const App = () => {
   const [isFlipped, setFlip] = useState(false);
@@ -20,16 +23,31 @@ const App = () => {
               flipDirection="horizontal"
               cardZIndex="1"
             >
-              <div className="p-4 h-[400px] w-400 flex items-center justify-center shadow-xl bg-white rounded-md">
+              <div className="p-4 h-[500px] w-500 shadow-xl bg-white rounded-md">
                 <img
-                  className="max-w-100 h-full object-cover rounded-sm"
-                  src="/hand.webp"
+                  className="max-w-100 h-full object-contain rounded-sm"
+                  src={data[0].image}
                   alt=""
                 />
               </div>
 
-              <div className="p-4 h-[400px] w-400 shadow-xl bg-white rounded-md">
-                This is a...Yep, this is definitely a hand! 😀
+              <div className="p-4 h-[500px] w-500 shadow-xl space-y-4 flex flex-col justify-center bg-white rounded-md text-left">
+                <div>
+                  <span className="font-bold text-md mr-3">Modalitás:</span>
+                  {data[0].modality}
+                </div>
+                <div>
+                  <span className="font-bold text-md mr-3">Régió:</span>
+                  {data[0].region}
+                </div>
+                <div>
+                  <span className="font-bold text-md mr-3">Radiológia:</span>
+                  {data[0].radiology}
+                </div>
+                <div>
+                  <span className="font-bold text-md mr-3">Diagnózis:</span>
+                  {data[0].diagnose}
+                </div>
               </div>
             </ReactCardFlip>
           </div>
