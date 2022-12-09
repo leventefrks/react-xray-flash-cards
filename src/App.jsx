@@ -14,7 +14,7 @@ const App = () => {
   return (
     <div className="App">
       <div className="w-full min-h-screen bg-gray-100 px-2 sm:px-0">
-        <h1 className="pt-4 text-4xl font-black text-gray-900 text-center">
+        <h1 className="pt-2 text-2xl font-black text-gray-900 text-center">
           X-Ray Memory Test
         </h1>
         <div className="flex flex-col min-h-screen items-center justify-center">
@@ -27,7 +27,7 @@ const App = () => {
               <div className="p-4 h-[500px] w-500 shadow-xl bg-white rounded-md">
                 <img
                   className="max-w-100 h-full object-contain rounded-sm"
-                  src={data[currentIndex].image}
+                  src={data[currentIndex].image && data[currentIndex].image}
                   alt=""
                 />
               </div>
@@ -63,7 +63,11 @@ const App = () => {
           </button>
           <button
             type="button"
-            onClick={() => setCurrentIndex(prevIndex => prevIndex + 1)}
+            onClick={() =>
+              setCurrentIndex(prevIndex =>
+                data.length - 1 <= prevIndex ? 0 : prevIndex + 1
+              )
+            }
             className="flex items-center gap-2 mt-4 bg-white border-black border-2 px-4 py-2 transition-colors duration-200 text-gray-900 text-sm rounded-md"
           >
             <GiCardRandom className="w-3 h-3" /> Gimme another X-Ray
