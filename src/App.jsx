@@ -62,25 +62,25 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className="relative w-full min-h-screen bg-black dark:bg-gray-100 px-2 sm:px-0">
-        <h1 className="pt-4 text-3xl font-light text-white dark:text-gray-800 text-center">
+      <div className="relative w-full min-h-screen bg-black dark:bg-gray-100 px-1 sm:px-0">
+        <h1 className="pt-4 text-xl sm:text-3xl font-light text-white dark:text-gray-800 text-center">
           X-Ray Memory Test
         </h1>
 
-        <h2 className="pt-1 text-xl font-bold text-white dark:text-gray-800 text-center">
+        <h2 className="pt-1 text-md sm:text-xl font-bold text-white dark:text-gray-800 text-center">
           How much do you know about radiology? Let's find out!
         </h2>
 
         <button
           type="button"
           aria-label="Toggle Light & Dark Mode"
-          className="absolute top-2 right-2 flex items-center rounded-md bg-indigo-800 p-2 text-gray-100"
+          className="absolute top-2 right-2 flex items-center rounded-md bg-green-500 p-2 text-white"
           onClick={toggleTheme}
         >
           {theme === 'dark' ? (
-            <FiSun className="h-6 w-6" />
+            <CiDark className="h-5 w-5 sm:w-6 sm:h-6" />
           ) : (
-            <CiDark className="h-6 w-6" />
+            <CiDark className="h-5 w-5 sm:w-6 sm:h-6" />
           )}
         </button>
 
@@ -88,7 +88,7 @@ const App = () => {
           <div className="flex gap-2 items-center">
             <button
               type="button"
-              className="w-10 h-10"
+              className="w-6 h-6 sm:w-10 sm:h-10"
               disabled={currentIndex === 0}
               onClick={() =>
                 setCurrentIndex(prevIndex =>
@@ -97,10 +97,10 @@ const App = () => {
               }
             >
               <RxCaretLeft
-                className={`w-10 h-10 text-white dark:text-gray-400 ${
+                className={`w-6 h-6 sm:w-10 sm:h-10 text-white dark:text-gray-400 ${
                   currentIndex === 0 && 'cursor-not-allowed'
                 } `}
-                aria-label="previous item"
+                aria-label="Previous item"
               />
             </button>
 
@@ -125,7 +125,7 @@ const App = () => {
             </div>
             <button
               type="button"
-              className="w-10 h-10"
+              className="w-6 h-6 sm:w-10 sm:h-10"
               onClick={() =>
                 setCurrentIndex(prevIndex =>
                   items.length - 1 <= prevIndex ? 0 : prevIndex + 1
@@ -133,8 +133,8 @@ const App = () => {
               }
             >
               <RxCaretRight
-                className="w-10 h-10 text-white dark:text-gray-400"
-                aria-label="next item"
+                className="w-6 h-6 sm:w-10 sm:h-10 text-white dark:text-gray-400"
+                aria-label="Next item"
               />
             </button>
           </div>

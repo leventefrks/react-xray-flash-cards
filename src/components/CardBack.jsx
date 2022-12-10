@@ -1,23 +1,23 @@
 const CardBack = ({ modality, region, radiology, diagnose }) => {
   return (
-    <div className="p-4 h-[500px] space-y-2 flex flex-col justify-center bg-white rounded-md">
+    <div className="p-2 sm:p-4 h-[500px] space-y-2 flex flex-col justify-center bg-white rounded-md">
       <div className="flex flex-col">
         <span className="font-bold text-md text-gray-600">Modalitás</span>
-        {modality && modality}
+        <span className="text-sm sm:text-md">{modality && modality}</span>
       </div>
       <div className="flex flex-col">
         <span className="font-bold text-md text-gray-600">Régió</span>
-        {region && region}
+        <span className="text-sm sm:text-md">{region && region}</span>
       </div>
       <div className="flex flex-col">
         <span className="font-bold text-md text-gray-600">
           Radiológiai jellemző
         </span>
-        {radiology && radiology}
+        <span className="text-sm sm:text-md">{radiology && radiology}</span>
       </div>
       <div className="flex flex-col">
         <span className="font-bold text-md text-gray-600">Diagnózis</span>
-        {diagnose && diagnose}
+        <span className="text-sm sm:text-md">{diagnose && diagnose}</span>
       </div>
     </div>
   );
