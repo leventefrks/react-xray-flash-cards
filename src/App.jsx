@@ -31,7 +31,7 @@ const App = () => {
       } catch (error) {
         console.error('Failed to fetch items', error);
       } finally {
-        setLoading(true);
+        setLoading(false);
       }
     };
 
@@ -45,8 +45,6 @@ const App = () => {
   useEffect(() => {
     if (window.matchMedia('(prefers-color-scheme: dark').matches) {
       setTheme('dark');
-    } else {
-      setTheme('light');
     }
   }, []);
 
@@ -67,12 +65,12 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className="relative w-full min-h-screen bg-black dark:bg-white px-1 sm:px-0">
-        <h1 className="pt-4 text-xl sm:text-3xl font-light text-white dark:text-gray-800 text-center">
+      <div className="relative w-full min-h-screen dark:bg-black bg-white px-1 sm:px-0">
+        <h1 className="pt-4 text-xl sm:text-3xl font-light dark:text-white text-gray-800 text-center">
           X-Ray Memory Test
         </h1>
 
-        <h2 className="pt-1 text-md sm:text-xl font-bold text-white dark:text-gray-800 text-center">
+        <h2 className="pt-1 text-md sm:text-xl font-bold dark:text-white text-gray-800 text-center">
           How much do you know about radiology? Let's find out!
         </h2>
 
@@ -102,7 +100,7 @@ const App = () => {
               }
             >
               <RxCaretLeft
-                className={`w-6 h-6 sm:w-10 sm:h-10 hover:scale-110 text-white dark:text-gray-800 ${
+                className={`w-6 h-6 sm:w-10 sm:h-10 hover:scale-110 dark:text-white text-gray-800 ${
                   currentIndex === 0 && 'cursor-not-allowed'
                 } `}
                 aria-label="Previous item"
@@ -111,7 +109,9 @@ const App = () => {
 
             {isLoading ? (
               <div className="flex flex-col gap-4 items-center justify-center h-[500px] w-[500px]">
-                <span className="dark:text-white text-gray-800">Loading..</span>
+                <span className="dark:text-white text-gray-800">
+                  Loading...
+                </span>
                 <AiOutlineLoading3Quarters
                   className="w-6 h-6 animate-spin
                   dark:text-white
@@ -149,7 +149,7 @@ const App = () => {
               }
             >
               <RxCaretRight
-                className="w-6 h-6 sm:w-10 sm:h-10 hover:scale-110 text-white dark:text-gray-800"
+                className="w-6 h-6 sm:w-10 sm:h-10 hover:scale-110 dark:text-white text-gray-800"
                 aria-label="Next item"
               />
             </button>
