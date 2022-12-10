@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 import { client } from './api';
-import { FiRotateCcw, FiSun } from 'react-icons/fi';
+import ReactCardFlip from 'react-card-flip';
+import { FiRotateCcw } from 'react-icons/fi';
 import { GiCardRandom } from 'react-icons/gi';
-import { CiDark } from 'react-icons/ci';
 import { RxCaretLeft, RxCaretRight } from 'react-icons/rx';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
-import ReactCardFlip from 'react-card-flip';
+import ThemeButton from './components/ThemeButton';
 import CardFront from './components/CardFront';
 import CardBack from './components/CardBack';
+import Title from './components/Title';
+import { SubTitle } from './components/SubTitle';
 
 const App = () => {
   const [isFlipped, setFlip] = useState(false);
@@ -66,26 +68,11 @@ const App = () => {
   return (
     <div className="App">
       <div className="relative w-full min-h-screen dark:bg-black bg-white px-1 sm:px-0">
-        <h1 className="pt-4 text-xl sm:text-3xl font-light dark:text-white text-gray-800 text-center">
-          X-Ray Memory Test
-        </h1>
+        <Title />
 
-        <h2 className="pt-1 text-md sm:text-xl font-bold dark:text-white text-gray-800 text-center">
-          How much do you know about radiology? Let's find out!
-        </h2>
+        <SubTitle />
 
-        <button
-          type="button"
-          aria-label="Toggle Light & Dark Mode"
-          className="absolute top-2 right-2 flex items-center rounded-md bg-green-500 p-2 text-white"
-          onClick={toggleTheme}
-        >
-          {theme === 'dark' ? (
-            <FiSun className="h-5 w-5 sm:w-6 sm:h-6" />
-          ) : (
-            <CiDark className="h-5 w-5 sm:w-6 sm:h-6" />
-          )}
-        </button>
+        <ThemeButton toggleTheme={toggleTheme} theme={theme} />
 
         <div className="relative flex flex-col mt-6 items-center justify-center">
           <div className="flex gap-2 items-center">
