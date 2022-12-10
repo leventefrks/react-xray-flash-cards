@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { client } from './api';
-import { FiRotateCcw } from 'react-icons/fi';
+import { FiRotateCcw, FiSun } from 'react-icons/fi';
 import { GiCardRandom } from 'react-icons/gi';
+import { CiDark } from 'react-icons/ci';
 import { RxCaretLeft, RxCaretRight } from 'react-icons/rx';
 import ReactCardFlip from 'react-card-flip';
 import CardFront from './components/CardFront';
@@ -13,6 +14,7 @@ const App = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [items, setItems] = useState([]);
   const [currentItem, setCurrentItem] = useState({});
+  const [theme, setTheme] = useState(null);
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -35,19 +37,52 @@ const App = () => {
     setCurrentItem(items[currentIndex]?.fields);
   }, [currentIndex]);
 
+  useEffect(() => {
+    if (window.matchMedia('(prefers-color-scheme: dark').matches) {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+  }, []);
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
+
   const onGenerateRandomNumber = () =>
     setCurrentIndex(Math.ceil(Math.random() * (items.length - 1 - 1)) + 1);
 
   return (
     <div className="App">
-      <div className="w-full min-h-screen bg-black px-2 sm:px-0">
-        <h1 className="pt-4 text-3xl font-light text-white text-center">
+      <div className="relative w-full min-h-screen bg-black dark:bg-gray-100 px-2 sm:px-0">
+        <h1 className="pt-4 text-3xl font-light text-white dark:text-gray-800 text-center">
           X-Ray Memory Test
         </h1>
 
-        <h2 className="pt-1 text-xl font-bold text-white text-center">
+        <h2 className="pt-1 text-xl font-bold text-white dark:text-gray-800 text-center">
           How much do you know about radiology? Let's find out!
         </h2>
+
+        <button
+          type="button"
+          aria-label="Toggle Light & Dark Mode"
+          className="absolute top-2 right-2 flex items-center rounded-md bg-indigo-800 p-2 text-gray-100"
+          onClick={toggleTheme}
+        >
+          {theme === 'dark' ? (
+            <FiSun className="h-6 w-6" />
+          ) : (
+            <CiDark className="h-6 w-6" />
+          )}
+        </button>
 
         <div className="relative flex flex-col mt-6 items-center justify-center">
           <div className="flex gap-2 items-center">
@@ -62,10 +97,8 @@ const App = () => {
               }
             >
               <RxCaretLeft
-                className={`w-10 h-10 ${
-                  currentIndex === 0
-                    ? 'text-gray-100 cursor-not-allowed'
-                    : 'text-white'
+                className={`w-10 h-10 text-white dark:text-gray-400 ${
+                  currentIndex === 0 && 'cursor-not-allowed'
                 } `}
                 aria-label="previous item"
               />
@@ -100,7 +133,7 @@ const App = () => {
               }
             >
               <RxCaretRight
-                className="w-10 h-10 text-white"
+                className="w-10 h-10 text-white dark:text-gray-400"
                 aria-label="next item"
               />
             </button>
