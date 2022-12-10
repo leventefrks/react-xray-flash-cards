@@ -24,12 +24,25 @@ const App = () => {
     const fetchItems = async () => {
       setLoading(true);
       try {
-        const { items } = await client.getEntries({
+        const entries = await client.getEntries({
           content_type: 'xray',
+          select: 'fields',
         });
 
-        setItems(items);
-        setCurrentItem(items[currentIndex].fields);
+        const sanitizedItems = entries?.items.map(entry => {
+          const { image, modality, radiology, region, diagnose } = entry.fields;
+
+          return {
+            image,
+            modality,
+            radiology,
+            region,
+            diagnose,
+          };
+        });
+
+        setItems(sanitizedItems);
+        setCurrentItem(sanitizedItems[currentIndex]);
       } catch (error) {
         console.error('Failed to fetch items', error);
       } finally {
@@ -41,7 +54,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    setCurrentItem(items[currentIndex]?.fields);
+    setCurrentItem(items[currentIndex]);
   }, [currentIndex]);
 
   useEffect(() => {
@@ -72,7 +85,7 @@ const App = () => {
 
         <ThemeButton toggleTheme={toggleTheme} theme={theme} />
 
-        <div className="relative flex flex-col mt-6 items-center justify-center">
+        <div className="relative flex flex-col mt-6 space-y-6 items-center justify-center">
           <div className="flex gap-2 items-center">
             <button
               type="button"
@@ -85,7 +98,7 @@ const App = () => {
               }
             >
               <RxCaretLeft
-                className={`w-6 h-6 sm:w-10 sm:h-10 dark:text-white text-gray-800 ${
+                className={`w-6 h-6 sm:w-10 sm:h-10 dark:text-white text-gray-700 ${
                   currentIndex === 0 && 'cursor-not-allowed'
                 } `}
                 aria-label="Previous item"
@@ -131,7 +144,7 @@ const App = () => {
             </button>
           </div>
 
-          <div className="mt-2 flex flex-col gap-6 md:mt-6 mb-6 md:mb-0 md:flex-row">
+          <div className="flex flex-col gap-6 mb-6 md:mb-0 md:flex-row">
             <button
               type="button"
               onClick={() => setFlip(!isFlipped)}

@@ -13,7 +13,7 @@ const ThemeButton = ({ toggleTheme, theme }) => {
           ? `${ariaLabelPrefix} light mode`
           : `${ariaLabelPrefix} dark mode`
       }`}
-      className="absolute top-2 right-2 flex items-center rounded-md bg-green-500 p-2 text-white"
+      className="absolute top-4 right-2 flex items-center rounded-md bg-green-500 p-2 text-white"
       onClick={toggleTheme}
     >
       {theme === 'dark' ? (
