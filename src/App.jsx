@@ -35,23 +35,23 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className="w-full min-h-screen bg-gray-100 px-2 sm:px-0">
-        <h1 className="pt-2 text-xl font-black text-gray-900 text-center">
+      <div className="w-full min-h-screen bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 px-2 sm:px-0">
+        <h1 className="pt-4 text-3xl font-light text-white text-center">
           X-Ray Memory Test
         </h1>
-        <div className="flex flex-col min-h-screen items-center justify-center">
-          <div className="max-w-[500px] w-full">
+        <div className="flex flex-col mt-6 items-center justify-center">
+          <div className="max-w-[450px] w-full">
             <ReactCardFlip
               isFlipped={isFlipped}
               flipDirection="horizontal"
               cardZIndex="1"
             >
-              <div className="p-4 h-[500px] w-500 shadow-xl bg-white rounded-md">
-                <span className="font-bold text-2xl text-left">
+              <div className="relative p-4 h-[450px] w-[450px] bg-white rounded-md overflow-hidden">
+                {/* <span className="absolute left-2 top-2 font-bold text-3xl text-gray-300">
                   {currentIndex}
-                </span>
+                </span> */}
                 <img
-                  className="max-w-100 h-full object-contain rounded-sm"
+                  className="max-w-100 h-full object-contain"
                   src={
                     currentItem?.image?.fields?.file?.url &&
                     currentItem?.image?.fields?.file?.url
@@ -60,37 +60,43 @@ const App = () => {
                 />
               </div>
 
-              <div className="p-4 h-[500px] w-500 shadow-xl space-y-4 flex flex-col justify-center bg-white rounded-md text-left">
+              <div className="p-4 h-[450px] w-[450px] space-y-3 flex flex-col justify-center bg-white rounded-md">
                 <div>
-                  <span className="font-bold text-md mr-1">Modalitás:</span>
+                  <span className="font-bold text-md text-gray-700 mr-1">
+                    Modalitás:
+                  </span>
                   {currentItem?.modality && currentItem?.modality}
                 </div>
                 <div>
-                  <span className="font-bold text-md mr-1">Régió:</span>
+                  <span className="font-bold text-md  text-gray-700 mr-1">
+                    Régió:
+                  </span>
                   {currentItem?.region && currentItem?.region}
                 </div>
                 <div>
-                  <span className="font-bold text-md mr-1">
+                  <span className="font-bold text-md text-gray-700 mr-1">
                     Radiológiai jellemző:
                   </span>
                   {currentItem?.radiology && currentItem?.radiology}
                 </div>
                 <div>
-                  <span className="font-bold text-md mr-1">Diagnózis:</span>
+                  <span className="font-bold text-md text-gray-700 mr-1">
+                    Diagnózis:
+                  </span>
                   {currentItem?.diagnose && currentItem?.diagnose}
                 </div>
               </div>
             </ReactCardFlip>
           </div>
 
-          <div className="flex flex-col gap-6 md:flex-row">
+          <div className="flex flex-col gap-6 mt-6 md:flex-row">
             <button
               type="button"
               onClick={() => setFlip(!isFlipped)}
-              className="flex gap-2 items-center mt-4 bg-black border-bg-black border-2 px-4 py-2 text-white text-sm rounded-md"
+              className="self-center flex gap-2 items-center bg-yellow-400 hover:bg-yellow-500 text-indigo-600 px-4 py-2 font-bold text-sm rounded-md"
             >
               <FiRotateCcw className="w-4 h-4" />
-              Show me the details
+              Know more
             </button>
             <button
               type="button"
@@ -99,7 +105,7 @@ const App = () => {
                   items.length - 1 <= prevIndex ? 0 : prevIndex + 1
                 )
               }
-              className="flex items-center gap-2 mt-4 bg-white border-black border-2 px-4 py-2 transition-colors duration-200 text-gray-900 text-sm rounded-md"
+              className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 px-4 py-2 transition-colors duration-200 text-white font-bold text-sm rounded-md"
             >
               <GiCardRandom className="w-4 h-4" />
               Gimme another X-Ray
