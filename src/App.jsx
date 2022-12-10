@@ -3,6 +3,8 @@ import ReactCardFlip from 'react-card-flip';
 import { useState } from 'react';
 import { FiRotateCcw } from 'react-icons/fi';
 import { GiCardRandom } from 'react-icons/gi';
+import CardFront from './components/CardFront';
+import CardBack from './components/CardBack';
 import { useEffect } from 'react';
 
 const App = () => {
@@ -43,53 +45,23 @@ const App = () => {
           How much do you know about radiology? Let's find out!
         </h2>
         <div className="flex flex-col mt-6 items-center justify-center">
-          <div className="max-w-[450px] w-full">
+          <div className="max-w-[500px] w-full">
             <ReactCardFlip
               isFlipped={isFlipped}
               flipDirection="horizontal"
               cardZIndex="1"
             >
-              <div className="h-[450px] bg-transparent overflow-hidden">
-                {/* <span className="absolute left-2 top-2 font-bold text-3xl text-gray-300">
-                  {currentIndex}
-                </span> */}
-                <img
-                  className="w-full h-full object-contain"
-                  src={
-                    !currentItem?.image?.fields?.file?.url ? (
-                      <span className="text-gray-400 text-2xl">Loading...</span>
-                    ) : (
-                      currentItem?.image?.fields?.file?.url
-                    )
-                  }
-                  alt=""
-                />
-              </div>
+              <CardFront
+                image={currentItem?.image?.fields?.file?.url}
+                currentIndex={currentIndex}
+              />
 
-              <div className="p-4 h-[450px] space-y-2 flex flex-col justify-center bg-white rounded-md">
-                <div className="flex flex-col">
-                  <span className="font-bold text-md text-gray-600">
-                    Modalitás
-                  </span>
-                  {currentItem?.modality && currentItem?.modality}
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-bold text-md text-gray-600">Régió</span>
-                  {currentItem?.region && currentItem?.region}
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-bold text-md text-gray-600">
-                    Radiológiai jellemző
-                  </span>
-                  {currentItem?.radiology && currentItem?.radiology}
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-bold text-md text-gray-600">
-                    Diagnózis
-                  </span>
-                  {currentItem?.diagnose && currentItem?.diagnose}
-                </div>
-              </div>
+              <CardBack
+                modality={currentItem?.modality}
+                region={currentItem?.region}
+                radiology={currentItem?.radiology}
+                diagnose={currentItem?.diagnose}
+              />
             </ReactCardFlip>
           </div>
 
