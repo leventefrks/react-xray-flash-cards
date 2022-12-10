@@ -80,7 +80,7 @@ const App = () => {
           {theme === 'dark' ? (
             <CiDark className="h-5 w-5 sm:w-6 sm:h-6" />
           ) : (
-            <CiDark className="h-5 w-5 sm:w-6 sm:h-6" />
+            <FiSun className="h-5 w-5 sm:w-6 sm:h-6" />
           )}
         </button>
 
@@ -88,7 +88,7 @@ const App = () => {
           <div className="flex gap-2 items-center">
             <button
               type="button"
-              className="w-6 h-6 sm:w-10 sm:h-10"
+              className="w-6 h-6 sm:w-10 sm:h-10 hover:scale-110 transition-transform duration-150"
               disabled={currentIndex === 0}
               onClick={() =>
                 setCurrentIndex(prevIndex =>
@@ -97,7 +97,7 @@ const App = () => {
               }
             >
               <RxCaretLeft
-                className={`w-6 h-6 sm:w-10 sm:h-10 text-white dark:text-gray-400 ${
+                className={`w-6 h-6 sm:w-10 sm:h-10 hover:scale-110 text-white dark:text-gray-800 ${
                   currentIndex === 0 && 'cursor-not-allowed'
                 } `}
                 aria-label="Previous item"
@@ -125,7 +125,7 @@ const App = () => {
             </div>
             <button
               type="button"
-              className="w-6 h-6 sm:w-10 sm:h-10"
+              className="w-6 h-6 sm:w-10 sm:h-10 hover:scale-110 transition-transform duration-150"
               onClick={() =>
                 setCurrentIndex(prevIndex =>
                   items.length - 1 <= prevIndex ? 0 : prevIndex + 1
@@ -133,7 +133,7 @@ const App = () => {
               }
             >
               <RxCaretRight
-                className="w-6 h-6 sm:w-10 sm:h-10 text-white dark:text-gray-400"
+                className="w-6 h-6 sm:w-10 sm:h-10 hover:scale-110 text-white dark:text-gray-800"
                 aria-label="Next item"
               />
             </button>
@@ -143,9 +143,9 @@ const App = () => {
             <button
               type="button"
               onClick={() => setFlip(!isFlipped)}
-              className="select-none self-center flex gap-2 items-center bg-yellow-400 hover:bg-yellow-500 text-indigo-800 px-4 py-2 font-bold text-sm rounded-md"
+              className="group select-none self-center flex gap-2 items-center bg-yellow-400 hover:bg-yellow-500 text-indigo-800 px-4 py-2 font-bold text-sm rounded-md"
             >
-              <FiRotateCcw className="w-4 h-4" />
+              <FiRotateCcw className="w-4 h-4 group-hover:rotate-180 transition-transform duration-250" />
               Know more
             </button>
             <button
