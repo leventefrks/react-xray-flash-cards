@@ -148,7 +148,7 @@ const App = () => {
             <button
               type="button"
               onClick={() => setFlip(!isFlipped)}
-              className="group select-none self-center flex gap-2 items-center bg-yellow-400 hover:bg-yellow-500 text-indigo-800 px-4 py-2 font-bold text-sm rounded-md"
+              className="group select-none self-center flex gap-2 items-center bg-yellow-400 hover:bg-yellow-500 text-indigo-800 px-4 py-2 font-bold text-sm sm:text-md rounded-md"
             >
               <FiRotateCcw
                 className="w-4 h-4 group-hover:rotate-180 transition-transform duration-250"
@@ -159,7 +159,7 @@ const App = () => {
             <button
               type="button"
               onClick={() => onGenerateRandomNumber()}
-              className="select-none flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 px-4 py-2 transition-colors duration-200 text-white font-bold text-sm rounded-md"
+              className="select-none flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 px-4 py-2 transition-colors duration-200 text-white font-bold text-sm sm:text-md rounded-md"
             >
               <GiCardRandom className="w-4 h-4" aria-hidden="true" />
               Random image
