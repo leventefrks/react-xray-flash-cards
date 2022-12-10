@@ -49,12 +49,12 @@ const App = () => {
               flipDirection="horizontal"
               cardZIndex="1"
             >
-              <div className="relative p-4 h-[450px] w-[450px] bg-white rounded-md overflow-hidden">
+              <div className="relative px-2 h-[450px] bg-transparent overflow-hidden">
                 {/* <span className="absolute left-2 top-2 font-bold text-3xl text-gray-300">
                   {currentIndex}
                 </span> */}
                 <img
-                  className="max-w-100 h-full object-contain"
+                  className="w-full h-full object-contain"
                   src={
                     !currentItem?.image?.fields?.file?.url ? (
                       <span className="text-gray-400 text-2xl">Loading...</span>
@@ -66,7 +66,7 @@ const App = () => {
                 />
               </div>
 
-              <div className="p-4 h-[450px] w-[450px] space-y-2 flex flex-col justify-center bg-white rounded-md">
+              <div className="p-4 h-[450px] space-y-2 flex flex-col justify-center bg-white rounded-md">
                 <div className="flex flex-col">
                   <span className="font-bold text-md text-gray-600">
                     Modalitás
