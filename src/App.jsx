@@ -4,6 +4,7 @@ import { FiRotateCcw, FiSun } from 'react-icons/fi';
 import { GiCardRandom } from 'react-icons/gi';
 import { CiDark } from 'react-icons/ci';
 import { RxCaretLeft, RxCaretRight } from 'react-icons/rx';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import ReactCardFlip from 'react-card-flip';
 import CardFront from './components/CardFront';
 import CardBack from './components/CardBack';
@@ -15,9 +16,11 @@ const App = () => {
   const [items, setItems] = useState([]);
   const [currentItem, setCurrentItem] = useState({});
   const [theme, setTheme] = useState(null);
+  const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchItems = async () => {
+      setLoading(true);
       try {
         const { items } = await client.getEntries({
           content_type: 'xray',
@@ -27,6 +30,8 @@ const App = () => {
         setCurrentItem(items[currentIndex].fields);
       } catch (error) {
         console.error('Failed to fetch items', error);
+      } finally {
+        setLoading(true);
       }
     };
 
@@ -62,7 +67,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className="relative w-full min-h-screen bg-black dark:bg-gray-100 px-1 sm:px-0">
+      <div className="relative w-full min-h-screen bg-black dark:bg-white px-1 sm:px-0">
         <h1 className="pt-4 text-xl sm:text-3xl font-light text-white dark:text-gray-800 text-center">
           X-Ray Memory Test
         </h1>
@@ -78,9 +83,9 @@ const App = () => {
           onClick={toggleTheme}
         >
           {theme === 'dark' ? (
-            <CiDark className="h-5 w-5 sm:w-6 sm:h-6" />
-          ) : (
             <FiSun className="h-5 w-5 sm:w-6 sm:h-6" />
+          ) : (
+            <CiDark className="h-5 w-5 sm:w-6 sm:h-6" />
           )}
         </button>
 
@@ -104,25 +109,36 @@ const App = () => {
               />
             </button>
 
-            <div className="max-w-[500px] w-full">
-              <ReactCardFlip
-                isFlipped={isFlipped}
-                flipDirection="horizontal"
-                cardZIndex="1"
-              >
-                <CardFront
-                  image={currentItem?.image?.fields?.file?.url}
-                  currentIndex={currentIndex}
+            {isLoading ? (
+              <div className="flex flex-col gap-4 items-center justify-center h-[500px] w-[500px]">
+                <span className="dark:text-white text-gray-800">Loading..</span>
+                <AiOutlineLoading3Quarters
+                  className="w-6 h-6 animate-spin
+                  dark:text-white
+                  text-gray-800"
                 />
+              </div>
+            ) : (
+              <div className="max-w-[500px] w-full">
+                <ReactCardFlip
+                  isFlipped={isFlipped}
+                  flipDirection="horizontal"
+                  cardZIndex="1"
+                >
+                  <CardFront
+                    image={currentItem?.image?.fields?.file?.url}
+                    currentIndex={currentIndex}
+                  />
 
-                <CardBack
-                  modality={currentItem?.modality}
-                  region={currentItem?.region}
-                  radiology={currentItem?.radiology}
-                  diagnose={currentItem?.diagnose}
-                />
-              </ReactCardFlip>
-            </div>
+                  <CardBack
+                    modality={currentItem?.modality}
+                    region={currentItem?.region}
+                    radiology={currentItem?.radiology}
+                    diagnose={currentItem?.diagnose}
+                  />
+                </ReactCardFlip>
+              </div>
+            )}
             <button
               type="button"
               className="w-6 h-6 sm:w-10 sm:h-10 hover:scale-110 transition-transform duration-150"
