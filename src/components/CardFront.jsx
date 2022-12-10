@@ -1,6 +1,6 @@
 const CardFront = ({ image, currentIndex }) => {
   return (
-    <div className="sm:h-[500px] h-[300px] bg-transparent overflow-hidden">
+    <div className="sm:h-[500px] h-full bg-transparent overflow-hidden">
       <img
         className="w-full h-full object-contain"
         src={
