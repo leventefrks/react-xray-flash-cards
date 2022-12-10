@@ -47,7 +47,7 @@ const App = () => {
           X-Ray Memory Test
         </h1>
 
-        <h2 className="pt-1 text-xl font-bold text-gray-300 text-center">
+        <h2 className="pt-1 text-xl font-bold text-white text-center">
           How much do you know about radiology? Let's find out!
         </h2>
 
