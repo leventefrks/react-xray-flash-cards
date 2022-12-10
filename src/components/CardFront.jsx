@@ -1,9 +1,6 @@
 const CardFront = ({ image, currentIndex }) => {
   return (
-    <div className="h-[480px] bg-transparent overflow-hidden">
-      {/* <span className="absolute left-2 top-2 font-bold text-3xl text-gray-300">
-        {currentIndex}
-      </span> */}
+    <div className="h-[500px] bg-transparent overflow-hidden">
       <img
         className="w-full h-full object-contain"
         src={
