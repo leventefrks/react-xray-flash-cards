@@ -24,13 +24,13 @@ const App = () => {
     const fetchItems = async () => {
       setLoading(true);
       try {
-        const entries = await client.getEntries({
+        const { items } = await client.getEntries({
           content_type: 'xray',
           select: 'fields',
         });
 
-        const sanitizedItems = entries?.items.map(entry => {
-          const { image, modality, radiology, region, diagnose } = entry.fields;
+        const sanitizedItems = items.map(item => {
+          const { image, modality, radiology, region, diagnose } = item.fields;
 
           return {
             image,
