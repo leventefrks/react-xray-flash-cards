@@ -49,7 +49,7 @@ const App = () => {
               flipDirection="horizontal"
               cardZIndex="1"
             >
-              <div className="relative px-2 h-[450px] bg-transparent overflow-hidden">
+              <div className="relative h-[450px] bg-transparent overflow-hidden">
                 {/* <span className="absolute left-2 top-2 font-bold text-3xl text-gray-300">
                   {currentIndex}
                 </span> */}
@@ -93,7 +93,7 @@ const App = () => {
             </ReactCardFlip>
           </div>
 
-          <div className="flex flex-col gap-6 mt-6 md:flex-row">
+          <div className="flex flex-col gap-6 md:mt-6 mb-6 md:mb-0 md:flex-row">
             <button
               type="button"
               onClick={() => setFlip(!isFlipped)}
