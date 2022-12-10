@@ -39,7 +39,7 @@ const App = () => {
         <h1 className="pt-4 text-3xl font-light text-white text-center">
           X-Ray Memory Test
         </h1>
-        <h2 className="pt-1 text-xl font-bold text-white text-center">
+        <h2 className="pt-1 text-xl font-bold text-gray-300 text-center">
           How much do you know about radiology? Let's find out!
         </h2>
         <div className="flex flex-col mt-6 items-center justify-center">
@@ -49,7 +49,7 @@ const App = () => {
               flipDirection="horizontal"
               cardZIndex="1"
             >
-              <div className="relative h-[450px] bg-transparent overflow-hidden">
+              <div className="h-[450px] bg-transparent overflow-hidden">
                 {/* <span className="absolute left-2 top-2 font-bold text-3xl text-gray-300">
                   {currentIndex}
                 </span> */}
@@ -93,7 +93,7 @@ const App = () => {
             </ReactCardFlip>
           </div>
 
-          <div className="flex flex-col gap-6 md:mt-6 mb-6 md:mb-0 md:flex-row">
+          <div className="mt-2 flex flex-col gap-6 md:mt-6 mb-6 md:mb-0 md:flex-row">
             <button
               type="button"
               onClick={() => setFlip(!isFlipped)}
