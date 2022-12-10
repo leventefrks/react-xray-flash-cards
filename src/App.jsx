@@ -5,18 +5,18 @@ import { FiRotateCcw } from 'react-icons/fi';
 import { GiCardRandom } from 'react-icons/gi';
 import { RxCaretLeft, RxCaretRight } from 'react-icons/rx';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
+import Layout from './layout/Layout';
+import Title from './components/Title';
+import SubTitle from './components/SubTitle';
 import ThemeButton from './components/ThemeButton';
 import CardFront from './components/CardFront';
 import CardBack from './components/CardBack';
-import Title from './components/Title';
-import { SubTitle } from './components/SubTitle';
 
 const App = () => {
-  const [isFlipped, setFlip] = useState(false);
-  const [isToggle, setToggle] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [items, setItems] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [currentItem, setCurrentItem] = useState({});
+  const [isFlipped, setFlip] = useState(false);
   const [theme, setTheme] = useState(null);
   const [isLoading, setLoading] = useState(false);
 
@@ -58,16 +58,14 @@ const App = () => {
     }
   }, [theme]);
 
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
+  const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
 
   const onGenerateRandomNumber = () =>
     setCurrentIndex(Math.ceil(Math.random() * (items.length - 1 - 1)) + 1);
 
   return (
     <div className="App">
-      <div className="relative w-full min-h-screen dark:bg-black bg-white px-1 sm:px-0">
+      <Layout>
         <Title />
 
         <SubTitle />
@@ -161,7 +159,7 @@ const App = () => {
             </button>
           </div>
         </div>
-      </div>
+      </Layout>
     </div>
   );
 };
