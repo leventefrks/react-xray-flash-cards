@@ -30,14 +30,8 @@ const App = () => {
         });
 
         const sanitizedItems = items.map(item => {
-          const { image, modality, radiology, region, diagnose } = item.fields;
-
           return {
-            image,
-            modality,
-            radiology,
-            region,
-            diagnose,
+            ...item.fields,
           };
         });
 
