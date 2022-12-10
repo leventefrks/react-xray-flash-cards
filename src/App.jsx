@@ -112,7 +112,7 @@ const App = () => {
             <button
               type="button"
               onClick={() => setFlip(!isFlipped)}
-              className="select-none self-center flex gap-2 items-center bg-yellow-400 hover:bg-yellow-500 text-indigo-600 px-4 py-2 font-bold text-sm rounded-md"
+              className="select-none self-center flex gap-2 items-center bg-yellow-400 hover:bg-yellow-500 text-indigo-800 px-4 py-2 font-bold text-sm rounded-md"
             >
               <FiRotateCcw className="w-4 h-4" />
               Know more
