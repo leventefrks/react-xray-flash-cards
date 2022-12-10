@@ -5,7 +5,7 @@ const CardFront = ({ image, currentIndex }) => {
         className="w-full h-full object-contain"
         src={
           !image ? (
-            <span className="text-gray-700 text-2xl">Loading...</span>
+            <span className="text-gray-600 text-2xl">Loading...</span>
           ) : (
             image
           )

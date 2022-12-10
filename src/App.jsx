@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { client } from './api';
+import client from './api';
 import ReactCardFlip from 'react-card-flip';
 import { FiRotateCcw } from 'react-icons/fi';
 import { GiCardRandom } from 'react-icons/gi';
