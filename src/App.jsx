@@ -1,13 +1,11 @@
+import { useState, useEffect } from 'react';
 import { client } from './api';
-import ReactCardFlip from 'react-card-flip';
-import { useState } from 'react';
 import { FiRotateCcw } from 'react-icons/fi';
 import { GiCardRandom } from 'react-icons/gi';
-import { RxCaretLeft } from 'react-icons/rx';
-import { RxCaretRight } from 'react-icons/rx';
+import { RxCaretLeft, RxCaretRight } from 'react-icons/rx';
+import ReactCardFlip from 'react-card-flip';
 import CardFront from './components/CardFront';
 import CardBack from './components/CardBack';
-import { useEffect } from 'react';
 
 const App = () => {
   const [isFlipped, setFlip] = useState(false);
