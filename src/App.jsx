@@ -66,28 +66,26 @@ const App = () => {
                 />
               </div>
 
-              <div className="p-4 h-[450px] w-[450px] space-y-3 flex flex-col justify-center bg-white rounded-md">
-                <div>
-                  <span className="font-bold text-md text-gray-700 mr-1">
-                    Modalitás:
+              <div className="p-4 h-[450px] w-[450px] space-y-2 flex flex-col justify-center bg-white rounded-md">
+                <div className="flex flex-col">
+                  <span className="font-bold text-md text-gray-600">
+                    Modalitás
                   </span>
                   {currentItem?.modality && currentItem?.modality}
                 </div>
-                <div>
-                  <span className="font-bold text-md text-gray-700 mr-1">
-                    Régió:
-                  </span>
+                <div className="flex flex-col">
+                  <span className="font-bold text-md text-gray-600">Régió</span>
                   {currentItem?.region && currentItem?.region}
                 </div>
-                <div>
-                  <span className="font-bold text-md text-gray-700 mr-1">
-                    Radiológiai jellemző:
+                <div className="flex flex-col">
+                  <span className="font-bold text-md text-gray-600">
+                    Radiológiai jellemző
                   </span>
                   {currentItem?.radiology && currentItem?.radiology}
                 </div>
-                <div>
-                  <span className="font-bold text-md text-gray-700 mr-1">
-                    Diagnózis:
+                <div className="flex flex-col">
+                  <span className="font-bold text-md text-gray-600">
+                    Diagnózis
                   </span>
                   {currentItem?.diagnose && currentItem?.diagnose}
                 </div>
