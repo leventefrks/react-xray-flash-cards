@@ -121,7 +121,7 @@ const App = () => {
               className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 px-4 py-2 transition-colors duration-200 text-white font-bold text-sm rounded-md"
             >
               <GiCardRandom className="w-4 h-4" />
-              Random X-ray
+              Random image
             </button>
           </div>
         </div>
