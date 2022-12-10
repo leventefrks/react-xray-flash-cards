@@ -46,9 +46,11 @@ const App = () => {
         <h1 className="pt-4 text-3xl font-light text-white text-center">
           X-Ray Memory Test
         </h1>
+
         <h2 className="pt-1 text-xl font-bold text-gray-300 text-center">
           How much do you know about radiology? Let's find out!
         </h2>
+
         <div className="relative flex flex-col mt-6 items-center justify-center">
           <div className="flex gap-2 items-center">
             <button
