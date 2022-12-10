@@ -1,11 +1,18 @@
+import { useEffect } from 'react';
 import { CiDark } from 'react-icons/ci';
 import { FiSun } from 'react-icons/fi';
 
 const ThemeButton = ({ toggleTheme, theme }) => {
+  const ariaLabelPrefix = 'Switch to';
+
   return (
     <button
       type="button"
-      aria-label="Toggle Light & Dark Mode"
+      aria-label={`${
+        theme === 'dark'
+          ? `${ariaLabelPrefix} light mode`
+          : `${ariaLabelPrefix} dark mode`
+      }`}
       className="absolute top-2 right-2 flex items-center rounded-md bg-green-500 p-2 text-white"
       onClick={toggleTheme}
     >

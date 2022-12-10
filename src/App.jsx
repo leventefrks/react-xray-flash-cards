@@ -4,10 +4,10 @@ import ReactCardFlip from 'react-card-flip';
 import { FiRotateCcw } from 'react-icons/fi';
 import { GiCardRandom } from 'react-icons/gi';
 import { RxCaretLeft, RxCaretRight } from 'react-icons/rx';
-import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import Layout from './layout/Layout';
 import Title from './components/Title';
 import SubTitle from './components/SubTitle';
+import Loader from './components/Loader';
 import ThemeButton from './components/ThemeButton';
 import CardFront from './components/CardFront';
 import CardBack from './components/CardBack';
@@ -52,9 +52,9 @@ const App = () => {
 
   useEffect(() => {
     if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
+      document.querySelector('body').classList.add('dark');
     } else {
-      document.documentElement.classList.remove('dark');
+      document.querySelector('body').classList.remove('dark');
     }
   }, [theme]);
 
@@ -85,7 +85,7 @@ const App = () => {
               }
             >
               <RxCaretLeft
-                className={`w-6 h-6 sm:w-10 sm:h-10 hover:scale-110 dark:text-white text-gray-800 ${
+                className={`w-6 h-6 sm:w-10 sm:h-10 dark:text-white text-gray-800 ${
                   currentIndex === 0 && 'cursor-not-allowed'
                 } `}
                 aria-label="Previous item"
@@ -93,16 +93,7 @@ const App = () => {
             </button>
 
             {isLoading ? (
-              <div className="flex flex-col gap-4 items-center justify-center h-[500px] w-[500px]">
-                <span className="dark:text-white text-gray-800">
-                  Loading...
-                </span>
-                <AiOutlineLoading3Quarters
-                  className="w-6 h-6 animate-spin
-                  dark:text-white
-                  text-gray-800"
-                />
-              </div>
+              <Loader />
             ) : (
               <div className="max-w-[500px] w-full">
                 <ReactCardFlip
@@ -134,7 +125,7 @@ const App = () => {
               }
             >
               <RxCaretRight
-                className="w-6 h-6 sm:w-10 sm:h-10 hover:scale-110 dark:text-white text-gray-800"
+                className="w-6 h-6 sm:w-10 sm:h-10 dark:text-white text-gray-800"
                 aria-label="Next item"
               />
             </button>
@@ -146,7 +137,10 @@ const App = () => {
               onClick={() => setFlip(!isFlipped)}
               className="group select-none self-center flex gap-2 items-center bg-yellow-400 hover:bg-yellow-500 text-indigo-800 px-4 py-2 font-bold text-sm rounded-md"
             >
-              <FiRotateCcw className="w-4 h-4 group-hover:rotate-180 transition-transform duration-250" />
+              <FiRotateCcw
+                className="w-4 h-4 group-hover:rotate-180 transition-transform duration-250"
+                aria-hidden="true"
+              />
               Know more
             </button>
             <button
@@ -154,7 +148,7 @@ const App = () => {
               onClick={() => onGenerateRandomNumber()}
               className="select-none flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 px-4 py-2 transition-colors duration-200 text-white font-bold text-sm rounded-md"
             >
-              <GiCardRandom className="w-4 h-4" />
+              <GiCardRandom className="w-4 h-4" aria-hidden="true" />
               Random image
             </button>
           </div>
