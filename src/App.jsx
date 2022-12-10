@@ -53,8 +53,11 @@ const App = () => {
                 <img
                   className="max-w-100 h-full object-contain"
                   src={
-                    currentItem?.image?.fields?.file?.url &&
-                    currentItem?.image?.fields?.file?.url
+                    !currentItem?.image?.fields?.file?.url ? (
+                      <span className="text-gray-400 text-2xl">Loading...</span>
+                    ) : (
+                      currentItem?.image?.fields?.file?.url
+                    )
                   }
                   alt=""
                 />
@@ -68,7 +71,7 @@ const App = () => {
                   {currentItem?.modality && currentItem?.modality}
                 </div>
                 <div>
-                  <span className="font-bold text-md  text-gray-700 mr-1">
+                  <span className="font-bold text-md text-gray-700 mr-1">
                     Régió:
                   </span>
                   {currentItem?.region && currentItem?.region}
@@ -108,7 +111,7 @@ const App = () => {
               className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 px-4 py-2 transition-colors duration-200 text-white font-bold text-sm rounded-md"
             >
               <GiCardRandom className="w-4 h-4" />
-              Gimme another X-Ray
+              Random X-ray
             </button>
           </div>
         </div>
