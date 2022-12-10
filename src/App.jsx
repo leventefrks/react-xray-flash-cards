@@ -26,7 +26,7 @@ const App = () => {
         setItems(items);
         setCurrentItem(items[currentIndex].fields);
       } catch (error) {
-        console.error('Failed to fetch x-ray items', error);
+        console.error('Failed to fetch items', error);
       }
     };
 
@@ -42,7 +42,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className="w-full min-h-screen bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 px-2 sm:px-0">
+      <div className="w-full min-h-screen bg-black px-2 sm:px-0">
         <h1 className="pt-4 text-3xl font-light text-white text-center">
           X-Ray Memory Test
         </h1>
