@@ -15,4 +15,4 @@ Basic demo with one dummy image
 - React Card Flip
 - React Icons
 - TailwindCSS
-- Contentful (Xray images & descriptions)
+- Contentful (images & descriptions are provided by Contentful)
