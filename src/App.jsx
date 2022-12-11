@@ -52,9 +52,8 @@ const App = () => {
   }, [currentIndex]);
 
   useEffect(() => {
-    if (window.matchMedia('(prefers-color-scheme: dark').matches) {
-      setTheme('dark');
-    }
+    const query = window.matchMedia('(prefers-color-scheme: dark)');
+    if (query.matches) setTheme('dark');
   }, []);
 
   useEffect(() => {
