@@ -17,9 +17,9 @@ const ThemeButton = ({ toggleTheme, theme }) => {
       onClick={toggleTheme}
     >
       {theme === 'dark' ? (
-        <CiDark className="h-5 w-5 sm:w-6 sm:h-6" />
+        <CiDark className="h-4 w-4 sm:w-6 sm:h-6" />
       ) : (
-        <FiSun className="h-5 w-5 sm:w-6 sm:h-6" />
+        <FiSun className="h-4 w-4 sm:w-6 sm:h-6" />
       )}
     </button>
   );

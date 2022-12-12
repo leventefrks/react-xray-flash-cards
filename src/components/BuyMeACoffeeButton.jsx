@@ -8,7 +8,7 @@ const BuyMeACoffeeButton = () => {
       rel="noopener noreferrer"
       href="https://www.buymeacoffee.com/leventefarkas"
     >
-      <SiBuymeacoffee className="h-5 w-5 sm:w-6 sm:h-6" />
+      <SiBuymeacoffee className="h-4 w-4 sm:w-6 sm:h-6" />
     </a>
   );
 };

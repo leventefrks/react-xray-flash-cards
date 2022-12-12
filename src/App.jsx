@@ -77,7 +77,7 @@ const App = () => {
 
         <SubTitle />
 
-        <div className="absolute top-4 right-2 flex items-center gap-2 sm:gap-6">
+        <div className="absolute top-4 right-2 flex items-center gap-2 sm:gap-4">
           <BuyMeACoffeeButton />
           <ThemeButton toggleTheme={toggleTheme} theme={theme} />
         </div>
