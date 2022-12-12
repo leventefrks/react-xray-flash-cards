@@ -1,5 +1,6 @@
 import ReactGA from 'react-ga4';
 import { sendAnalytics } from './analytics';
+import random from 'random';
 import { useState, useEffect } from 'react';
 import client from './api';
 import ReactCardFlip from 'react-card-flip';
@@ -76,102 +77,104 @@ const App = () => {
   };
 
   const onGenerateRandomNumber = () => {
-    setCurrentIndex(Math.ceil(Math.random() * (items.length - 1)) + 1);
+    setCurrentIndex(random.int(0, items.length - 1));
     sendAnalytics('Random Number', 'Click');
   };
 
   return (
     <div className="App">
-      <Layout>
-        <div className="relative top-4 right-2 flex justify-end gap-2 sm:gap-4">
-          <BuyMeACoffeeButton />
-          <ThemeButton toggleTheme={toggleTheme} theme={theme} />
-        </div>
-
-        <Title />
-        <SubTitle />
-
-        <div className="relative flex flex-col mt-6 space-y-12 items-center justify-center">
-          <div className="flex gap-2 items-center">
-            <button
-              type="button"
-              className="w-6 h-6 sm:w-10 sm:h-10 hover:scale-110 transition-transform duration-150"
-              disabled={currentIndex === 0}
-              onClick={() =>
-                setCurrentIndex(prevIndex =>
-                  prevIndex <= 0 ? 0 : prevIndex - 1
-                )
-              }
-            >
-              <RxCaretLeft
-                className={`w-6 h-6 sm:w-10 sm:h-10 dark:text-white text-gray-600 ${
-                  currentIndex === 0 && 'cursor-not-allowed'
-                } `}
-                aria-label="Previous item"
-              />
-            </button>
-
-            {isLoading ? (
-              <Loader />
-            ) : (
-              <div className="max-w-[500px] w-full">
-                <ReactCardFlip
-                  isFlipped={isFlipped}
-                  flipDirection="horizontal"
-                  cardZIndex="1"
-                >
-                  <CardFront
-                    image={items[currentIndex]?.image?.fields?.file?.url}
-                  />
-
-                  <CardBack
-                    modality={items[currentIndex]?.modality}
-                    region={items[currentIndex]?.region}
-                    radiology={items[currentIndex]?.radiology}
-                    diagnose={items[currentIndex]?.diagnose}
-                  />
-                </ReactCardFlip>
-              </div>
-            )}
-            <button
-              type="button"
-              className="w-6 h-6 sm:w-10 sm:h-10 hover:scale-110 transition-transform duration-150"
-              onClick={() =>
-                setCurrentIndex(prevIndex =>
-                  items.length - 1 <= prevIndex ? 0 : prevIndex + 1
-                )
-              }
-            >
-              <RxCaretRight
-                className="w-6 h-6 sm:w-10 sm:h-10 dark:text-white text-gray-600"
-                aria-label="Next item"
-              />
-            </button>
+      <div className="min-h-screen min-w-screen bg-gray-50">
+        <Layout>
+          <div className="relative top-4 right-2 flex justify-end gap-2 sm:gap-4">
+            <BuyMeACoffeeButton />
+            <ThemeButton toggleTheme={toggleTheme} theme={theme} />
           </div>
 
-          <div className="flex flex-col gap-6 mb-6 md:mb-0 md:flex-row">
-            <button
-              type="button"
-              onClick={() => setFlip(!isFlipped)}
-              className="group select-none self-center flex gap-2 items-center bg-yellow-400 hover:bg-yellow-500 text-indigo-800 px-4 py-2 font-bold text-xs sm:text-md rounded-md"
-            >
-              <FiRotateCcw
-                className="w-4 h-4 group-hover:rotate-180 transition-transform duration-250"
-                aria-hidden="true"
-              />
-              Know more
-            </button>
-            <button
-              type="button"
-              onClick={() => onGenerateRandomNumber()}
-              className="select-none flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 px-4 py-2 transition-colors duration-200 text-white font-bold text-xs sm:text-md rounded-md"
-            >
-              <GiCardRandom className="w-4 h-4" aria-hidden="true" />
-              Random image
-            </button>
+          <Title />
+          <SubTitle />
+
+          <div className="relative flex flex-col mt-6 space-y-12 items-center justify-center">
+            <div className="flex gap-2 items-center">
+              <button
+                type="button"
+                className="w-6 h-6 sm:w-10 sm:h-10 hover:scale-110 transition-transform duration-150"
+                disabled={currentIndex === 0}
+                onClick={() =>
+                  setCurrentIndex(prevIndex =>
+                    prevIndex <= 0 ? 0 : prevIndex - 1
+                  )
+                }
+              >
+                <RxCaretLeft
+                  className={`w-6 h-6 sm:w-10 sm:h-10 dark:text-white text-gray-600 ${
+                    currentIndex === 0 && 'cursor-not-allowed'
+                  } `}
+                  aria-label="Previous item"
+                />
+              </button>
+
+              {isLoading ? (
+                <Loader />
+              ) : (
+                <div className="max-w-[500px] w-full">
+                  <ReactCardFlip
+                    isFlipped={isFlipped}
+                    flipDirection="horizontal"
+                    cardZIndex="1"
+                  >
+                    <CardFront
+                      image={items[currentIndex]?.image?.fields?.file?.url}
+                    />
+
+                    <CardBack
+                      modality={items[currentIndex]?.modality}
+                      region={items[currentIndex]?.region}
+                      radiology={items[currentIndex]?.radiology}
+                      diagnose={items[currentIndex]?.diagnose}
+                    />
+                  </ReactCardFlip>
+                </div>
+              )}
+              <button
+                type="button"
+                className="w-6 h-6 sm:w-10 sm:h-10 hover:scale-110 transition-transform duration-150"
+                onClick={() =>
+                  setCurrentIndex(prevIndex =>
+                    items.length - 1 <= prevIndex ? 0 : prevIndex + 1
+                  )
+                }
+              >
+                <RxCaretRight
+                  className="w-6 h-6 sm:w-10 sm:h-10 dark:text-white text-gray-600"
+                  aria-label="Next item"
+                />
+              </button>
+            </div>
+
+            <div className="flex flex-col gap-6 mb-6 md:mb-0 md:flex-row">
+              <button
+                type="button"
+                onClick={() => setFlip(!isFlipped)}
+                className="group select-none self-center flex gap-2 items-center bg-yellow-400 hover:bg-yellow-500 text-indigo-800 px-4 py-2 font-bold text-xs sm:text-md rounded-md"
+              >
+                <FiRotateCcw
+                  className="w-4 h-4 group-hover:rotate-180 transition-transform duration-250"
+                  aria-hidden="true"
+                />
+                Know more
+              </button>
+              <button
+                type="button"
+                onClick={() => onGenerateRandomNumber()}
+                className="select-none flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 px-4 py-2 transition-colors duration-200 text-white font-bold text-xs sm:text-md rounded-md"
+              >
+                <GiCardRandom className="w-4 h-4" aria-hidden="true" />
+                Random image
+              </button>
+            </div>
           </div>
-        </div>
-      </Layout>
+        </Layout>
+      </div>
     </div>
   );
 };
