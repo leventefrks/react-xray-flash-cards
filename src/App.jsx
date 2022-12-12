@@ -9,6 +9,7 @@ import Title from './components/Title';
 import SubTitle from './components/SubTitle';
 import Loader from './components/Loader';
 import ThemeButton from './components/ThemeButton';
+import BuyMeACoffeeButton from './components/BuyMeACoffeeButton';
 import CardFront from './components/CardFront';
 import CardBack from './components/CardBack';
 
@@ -76,7 +77,10 @@ const App = () => {
 
         <SubTitle />
 
-        <ThemeButton toggleTheme={toggleTheme} theme={theme} />
+        <div className="absolute top-4 right-2 flex items-center gap-2 sm:gap-6">
+          <BuyMeACoffeeButton />
+          <ThemeButton toggleTheme={toggleTheme} theme={theme} />
+        </div>
 
         <div className="relative flex flex-col mt-6 space-y-16 items-center justify-center">
           <div className="flex gap-2 items-center">
