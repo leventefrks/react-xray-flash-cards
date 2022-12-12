@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { CiDark } from 'react-icons/ci';
 import { FiSun } from 'react-icons/fi';
 

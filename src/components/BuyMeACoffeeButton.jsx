@@ -1,4 +1,3 @@
-import ReactGA from 'react-ga4';
 import { sendAnalytics } from '../analytics';
 import { SiBuymeacoffee } from 'react-icons/si';
 
