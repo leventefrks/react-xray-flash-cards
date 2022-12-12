@@ -1,3 +1,4 @@
+import ReactGA from 'react-ga';
 import { useState, useEffect } from 'react';
 import client from './api';
 import ReactCardFlip from 'react-card-flip';
@@ -13,6 +14,8 @@ import BuyMeACoffeeButton from './components/BuyMeACoffeeButton';
 import CardFront from './components/CardFront';
 import CardBack from './components/CardBack';
 
+const TRACKING_ID = import.meta.env.GA_TRACKING_ID;
+
 const App = () => {
   const [items, setItems] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,6 +23,8 @@ const App = () => {
   const [isFlipped, setFlip] = useState(false);
   const [theme, setTheme] = useState(null);
   const [isLoading, setLoading] = useState(false);
+
+  ReactGA.initialize(TRACKING_ID);
 
   useEffect(() => {
     const fetchItems = async () => {

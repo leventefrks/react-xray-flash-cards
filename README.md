@@ -16,4 +16,5 @@ Basic demo with one dummy image
 - React Card Flip
 - React Icons
 - TailwindCSS
+- Vite plugin Radar for tracking
 - Contentful (images & descriptions are provided by Contentful)
