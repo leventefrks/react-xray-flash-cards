@@ -89,7 +89,7 @@ const App = () => {
   return (
     <div className="App">
       <Layout>
-        <div className="relative top-4 right-2 flex ml-auto gap-2 sm:gap-4">
+        <div className="relative top-4 right-2 flex justify-end gap-2 sm:gap-4">
           <BuyMeACoffeeButton />
           <ThemeButton toggleTheme={toggleTheme} theme={theme} />
         </div>
