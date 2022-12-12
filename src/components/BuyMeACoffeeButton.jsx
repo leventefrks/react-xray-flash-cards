@@ -5,7 +5,7 @@ import { SiBuymeacoffee } from 'react-icons/si';
 const BuyMeACoffeeButton = () => {
   return (
     <a
-      className="flex  gap-2 items-center rounded-md bg-pink-500 p-2 text-white"
+      className="flex  gap-2 items-center rounded-md bg-amber-600 hover:bg-amber-500 transition-colors duration-150 p-2 text-white"
       target="_blank"
       rel="noopener noreferrer"
       href="https://www.buymeacoffee.com/leventefarkas"

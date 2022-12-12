@@ -13,7 +13,7 @@ const ThemeButton = ({ toggleTheme, theme }) => {
           ? `${ariaLabelPrefix} light mode`
           : `${ariaLabelPrefix} dark mode`
       }`}
-      className="flex items-center rounded-md bg-green-500 p-2 text-white"
+      className="flex items-center rounded-md bg-blue-500 hover:bg-blue-600 transition-colors duration-150 p-2 text-white"
       onClick={toggleTheme}
     >
       {theme === 'dark' ? (

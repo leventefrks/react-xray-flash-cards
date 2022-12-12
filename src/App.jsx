@@ -83,7 +83,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className="min-h-screen min-w-screen bg-gray-50">
+      <div className="min-h-screen min-w-screen dark:bg-black bg-gray-50">
         <Layout>
           <div className="relative top-4 right-2 flex justify-end gap-2 sm:gap-4">
             <BuyMeACoffeeButton />
@@ -155,7 +155,7 @@ const App = () => {
               <button
                 type="button"
                 onClick={() => setFlip(!isFlipped)}
-                className="group select-none self-center flex gap-2 items-center bg-yellow-400 hover:bg-yellow-500 text-indigo-800 px-4 py-2 font-bold text-xs sm:text-md rounded-md"
+                className="group select-none self-center flex gap-2 items-center bg-yellow-400 hover:bg-yellow-300 text-indigo-700 px-4 py-2 font-bold text-xs sm:text-md rounded-md"
               >
                 <FiRotateCcw
                   className="w-4 h-4 group-hover:rotate-180 transition-transform duration-250"
@@ -166,7 +166,7 @@ const App = () => {
               <button
                 type="button"
                 onClick={() => onGenerateRandomNumber()}
-                className="select-none flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 px-4 py-2 transition-colors duration-200 text-white font-bold text-xs sm:text-md rounded-md"
+                className="select-none flex items-center gap-2 bg-indigo-700 hover:bg-indigo-600 px-4 py-2 transition-colors duration-150 text-white font-bold text-xs sm:text-md rounded-md"
               >
                 <GiCardRandom className="w-4 h-4" aria-hidden="true" />
                 Random image
