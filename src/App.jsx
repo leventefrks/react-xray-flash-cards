@@ -1,4 +1,5 @@
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
+import { sendAnalytics } from './analytics';
 import { useState, useEffect } from 'react';
 import client from './api';
 import ReactCardFlip from 'react-card-flip';
@@ -14,7 +15,10 @@ import BuyMeACoffeeButton from './components/BuyMeACoffeeButton';
 import CardFront from './components/CardFront';
 import CardBack from './components/CardBack';
 
-const TRACKING_ID = import.meta.env.GA_TRACKING_ID;
+const GA_MEASUREMENT_ID = process.env.GA_MEASUREMENT_ID;
+
+ReactGA.initialize(GA_MEASUREMENT_ID);
+ReactGA.send('pageview');
 
 const App = () => {
   const [items, setItems] = useState([]);
@@ -23,8 +27,6 @@ const App = () => {
   const [isFlipped, setFlip] = useState(false);
   const [theme, setTheme] = useState(null);
   const [isLoading, setLoading] = useState(false);
-
-  ReactGA.initialize(TRACKING_ID);
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -70,10 +72,19 @@ const App = () => {
     }
   }, [theme]);
 
-  const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
+  useEffect(() => {
+    sendAnalytics('Card Flipped', 'Click');
+  }, [isFlipped]);
 
-  const onGenerateRandomNumber = () =>
-    setCurrentIndex(Math.ceil(Math.random() * (items.length - 1 - 1)) + 1);
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+    sendAnalytics('Toggle Theme', 'Click');
+  };
+
+  const onGenerateRandomNumber = () => {
+    setCurrentIndex(Math.ceil(Math.random() * (items.length - 1)) + 1);
+    sendAnalytics('Random Number', 'Click');
+  };
 
   return (
     <div className="App">

@@ -13,8 +13,8 @@ Basic demo with one dummy image
 
 - Vite
 - React
+- React GA 4 for tracking
 - React Card Flip
 - React Icons
 - TailwindCSS
-- Vite plugin Radar for tracking
 - Contentful (images & descriptions are provided by Contentful)
