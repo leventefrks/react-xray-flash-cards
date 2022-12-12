@@ -89,14 +89,13 @@ const App = () => {
   return (
     <div className="App">
       <Layout>
-        <Title />
-
-        <SubTitle />
-
-        <div className="absolute top-4 right-2 flex flex-col md:flex-row-reverse items-end md:items-center gap-2 sm:gap-4">
-          <ThemeButton toggleTheme={toggleTheme} theme={theme} />
+        <div className="relative top-4 right-2 flex ml-auto gap-2 sm:gap-4">
           <BuyMeACoffeeButton />
+          <ThemeButton toggleTheme={toggleTheme} theme={theme} />
         </div>
+
+        <Title />
+        <SubTitle />
 
         <div className="relative flex flex-col mt-6 space-y-16 items-center justify-center">
           <div className="flex gap-2 items-center">
