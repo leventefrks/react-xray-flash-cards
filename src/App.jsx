@@ -106,7 +106,7 @@ const App = () => {
                 }
               >
                 <RxCaretLeft
-                  className={`w-6 h-6 sm:w-10 sm:h-10 dark:text-white text-gray-600 ${
+                  className={`w-6 h-6 sm:w-10 sm:h-10 dark:text-gray-100 text-gray-800 ${
                     currentIndex === 0 && 'cursor-not-allowed'
                   } `}
                   aria-label="Previous item"
@@ -116,7 +116,7 @@ const App = () => {
               {isLoading ? (
                 <Loader />
               ) : (
-                <div className="max-w-[500px] w-full">
+                <div className="max-w-[450px] w-full">
                   <ReactCardFlip
                     isFlipped={isFlipped}
                     flipDirection="horizontal"
@@ -145,7 +145,7 @@ const App = () => {
                 }
               >
                 <RxCaretRight
-                  className="w-6 h-6 sm:w-10 sm:h-10 dark:text-white text-gray-600"
+                  className="w-6 h-6 sm:w-10 sm:h-10 dark:text-gray-100 text-gray-800"
                   aria-label="Next item"
                 />
               </button>
