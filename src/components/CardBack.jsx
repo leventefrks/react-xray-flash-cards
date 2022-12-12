@@ -1,6 +1,6 @@
 const CardBack = ({ modality, region, radiology, diagnose }) => {
   return (
-    <div className="p-2 sm:p-4 sm:h-[500px] h-full space-y-2 flex flex-col justify-center bg-white rounded-md shadow-xl dark:shadow-none">
+    <div className="p-2 sm:p-4 h-[300px] sm:h-[400px] md:h-[450px] space-y-2 flex flex-col justify-center bg-white rounded-md shadow-xl dark:shadow-none">
       <div className="flex flex-col">
         <span className="font-bold text-md text-gray-600">Modalitás</span>
         <span className="text-sm sm:text-md">{modality && modality}</span>

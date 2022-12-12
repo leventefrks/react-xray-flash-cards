@@ -91,7 +91,7 @@ const App = () => {
         <Title />
         <SubTitle />
 
-        <div className="relative flex flex-col mt-6 space-y-16 items-center justify-center">
+        <div className="relative flex flex-col mt-6 space-y-12 items-center justify-center">
           <div className="flex gap-2 items-center">
             <button
               type="button"
@@ -104,7 +104,7 @@ const App = () => {
               }
             >
               <RxCaretLeft
-                className={`w-6 h-6 sm:w-10 sm:h-10 dark:text-white text-gray-700 ${
+                className={`w-6 h-6 sm:w-10 sm:h-10 dark:text-white text-gray-600 ${
                   currentIndex === 0 && 'cursor-not-allowed'
                 } `}
                 aria-label="Previous item"
@@ -143,7 +143,7 @@ const App = () => {
               }
             >
               <RxCaretRight
-                className="w-6 h-6 sm:w-10 sm:h-10 dark:text-white text-gray-800"
+                className="w-6 h-6 sm:w-10 sm:h-10 dark:text-white text-gray-600"
                 aria-label="Next item"
               />
             </button>
