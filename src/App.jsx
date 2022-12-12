@@ -93,9 +93,9 @@ const App = () => {
 
         <SubTitle />
 
-        <div className="absolute top-4 right-2 flex items-center gap-2 sm:gap-4">
-          <BuyMeACoffeeButton />
+        <div className="absolute top-4 right-2 flex flex-col md:flex-row-reverse items-end md:items-center gap-2 sm:gap-4">
           <ThemeButton toggleTheme={toggleTheme} theme={theme} />
+          <BuyMeACoffeeButton />
         </div>
 
         <div className="relative flex flex-col mt-6 space-y-16 items-center justify-center">
