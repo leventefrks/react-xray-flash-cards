@@ -23,7 +23,6 @@ ReactGA.send('pageview');
 const App = () => {
   const [items, setItems] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [currentItem, setCurrentItem] = useState({});
   const [isFlipped, setFlip] = useState(false);
   const [theme, setTheme] = useState(null);
   const [isLoading, setLoading] = useState(false);
@@ -44,7 +43,6 @@ const App = () => {
         });
 
         setItems(sanitizedItems);
-        setCurrentItem(sanitizedItems[currentIndex]);
       } catch (error) {
         console.error('Failed to fetch items', error);
       } finally {
@@ -54,10 +52,6 @@ const App = () => {
 
     fetchItems();
   }, []);
-
-  useEffect(() => {
-    setCurrentItem(items[currentIndex]);
-  }, [currentIndex]);
 
   useEffect(() => {
     const query = window.matchMedia('(prefers-color-scheme: dark)');
@@ -127,15 +121,14 @@ const App = () => {
                   cardZIndex="1"
                 >
                   <CardFront
-                    image={currentItem?.image?.fields?.file?.url}
-                    currentIndex={currentIndex}
+                    image={items[currentIndex]?.image?.fields?.file?.url}
                   />
 
                   <CardBack
-                    modality={currentItem?.modality}
-                    region={currentItem?.region}
-                    radiology={currentItem?.radiology}
-                    diagnose={currentItem?.diagnose}
+                    modality={items[currentIndex]?.modality}
+                    region={items[currentIndex]?.region}
+                    radiology={items[currentIndex]?.radiology}
+                    diagnose={items[currentIndex]?.diagnose}
                   />
                 </ReactCardFlip>
               </div>
