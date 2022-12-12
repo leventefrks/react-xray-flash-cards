@@ -166,9 +166,12 @@ const App = () => {
               <button
                 type="button"
                 onClick={() => onGenerateRandomNumber()}
-                className="select-none flex items-center gap-2 bg-indigo-700 hover:bg-indigo-600 px-4 py-2 transition-colors duration-150 text-white font-bold text-xs sm:text-md rounded-md"
+                className="group select-none flex items-center gap-2 bg-indigo-700 hover:bg-indigo-600 px-4 py-2 transition-all duration-150 text-white font-bold text-xs sm:text-md rounded-md"
               >
-                <GiCardRandom className="w-4 h-4" aria-hidden="true" />
+                <GiCardRandom
+                  className="w-4 h-4 group-hover:-rotate-12"
+                  aria-hidden="true"
+                />
                 Random image
               </button>
             </div>
