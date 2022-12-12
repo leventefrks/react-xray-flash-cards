@@ -4,9 +4,8 @@ Another lil' fun project for a relative who's studying at the medical school.
 She needed a simple application which helps her preparing for her upcoming exam.
 (The descriptions (on the back of the card) are in Hungarian)
 
-## Live Demo
+## Live Version
 
-Basic demo with one dummy image
 [Demo](https://xray-memory-test.netlify.app)
 
 ## Tech Stack
