@@ -120,7 +120,7 @@ const App = () => {
                   </div>
 
                   <div className="relative md:-right-8 flex gap-2 items-center text-gray-600 dark:text-gray-100 font-bold">
-                    <MdRotateLeft className="w-8 h-8 group-hover:rotate-180 transition-transform duration-250" />
+                    <MdRotateLeft className="w-4 h-4 sm:w-8 sm:h-8" />
                   </div>
                 </div>
 
