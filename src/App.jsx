@@ -109,14 +109,14 @@ const App = () => {
             ) : (
               <div className="flex w-full max-w-[500px] flex-col gap-1">
                 <div className="flex items-center justify-between">
-                  <div className="text-md flex items-center gap-2 font-bold text-gray-500 dark:text-gray-100">
+                  <div className="text-md flex items-center gap-2 font-bold text-gray-400 dark:text-gray-100">
                     <span>
                       {items.length > 0 ? items.length : items.length}
                     </span>
                     <span className="text-light text-sm">images</span>
                   </div>
 
-                  <div className="relative flex items-center gap-2 font-bold text-gray-600 dark:text-gray-100 md:-right-8">
+                  <div className="relative flex items-center gap-2 font-bold text-gray-400 dark:text-gray-100 md:-right-8">
                     <MdRotateLeft className="h-4 w-4 sm:h-8 sm:w-8" />
                   </div>
                 </div>
