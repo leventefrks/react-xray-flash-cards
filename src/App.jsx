@@ -1,7 +1,7 @@
 import ReactGA from 'react-ga4';
 import client from './api';
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import random from 'random';
 import { sendAnalytics } from './analytics';
 
@@ -80,13 +80,19 @@ const App = () => {
   };
 
   const onGenerateRandomNumber = () => {
-    setCurrentIndex(random.int(0, items.length - 1));
+    const randomNumber = random.int(0, items.length - 1);
+    setCurrentIndex(randomNumber);
     sendAnalytics('Random Number', 'Click');
   };
 
   return (
     <div className="App">
-      <div className="min-h-screen min-w-screen dark:bg-black bg-gray-50">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className="min-h-screen min-w-screen dark:bg-black bg-gray-50"
+      >
         <Layout>
           <div className="relative top-4 right-2 flex justify-end gap-2 sm:gap-4">
             <BuyMeACoffeeButton />
@@ -100,15 +106,15 @@ const App = () => {
             {isLoading ? (
               <Loader />
             ) : (
-              <motion.div
-                layout
-                initial={{ opacity: 0, y: '-10px' }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+              <div
                 className="max-w-[450px] w-full"
                 onClick={() => setFlip(!isFlipped)}
               >
-                <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+                <ReactCardFlip
+                  isFlipped={isFlipped}
+                  flipDirection="horizontal"
+                  cardZIndex="1"
+                >
                   <CardFront
                     image={items[currentIndex]?.image?.fields?.file?.url}
                   />
@@ -120,7 +126,7 @@ const App = () => {
                     diagnose={items[currentIndex]?.diagnose}
                   />
                 </ReactCardFlip>
-              </motion.div>
+              </div>
             )}
 
             <div className="flex items-center justify-between gap-6 mb-6 sm:mb-0">
@@ -145,7 +151,7 @@ const App = () => {
                 <button
                   type="button"
                   onClick={() => setFlip(!isFlipped)}
-                  className="group select-none flex gap-2 items-center bg-yellow-400 hover:bg-yellow-300 text-indigo-700 px-4 py-2 font-bold text-xs sm:text-md rounded-md"
+                  className="group select-none flex gap-2 items-center justify-center bg-yellow-400 hover:bg-yellow-300 text-indigo-700 px-4 py-2 font-bold text-xs sm:text-md rounded-md"
                 >
                   <FiRotateCcw
                     className="w-4 h-4 group-hover:rotate-180 transition-transform duration-250"
@@ -156,7 +162,8 @@ const App = () => {
                 <button
                   type="button"
                   onClick={() => onGenerateRandomNumber()}
-                  className="group select-none flex items-center gap-2 bg-indigo-700 hover:bg-indigo-600 px-4 py-2 transition-all duration-150 text-white font-bold text-xs sm:text-md rounded-md"
+                  disabled={isLoading}
+                  className="group select-none flex items-center justify-center gap-2 bg-indigo-700 hover:bg-indigo-600 px-4 py-2 transition-all duration-150 text-white font-bold text-xs sm:text-md rounded-md"
                 >
                   <GiCardRandom
                     className="w-4 h-4 group-hover:-rotate-12"
@@ -182,7 +189,7 @@ const App = () => {
             </div>
           </div>
         </Layout>
-      </div>
+      </motion.div>
     </div>
   );
 };
