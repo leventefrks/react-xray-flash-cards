@@ -9,9 +9,8 @@ const CardBack = ({ modality, region, radiology, diagnose }) => {
           key={modality}
           initial={{ opacity: 0, y: '-10px' }}
           animate={{ opacity: 1, y: '0' }}
-          exit={{ opacity: 0, y: '10px' }}
+          exit={{ opacity: 0, y: '20px' }}
           transition={{ duration: 0.5 }}
-          mode="wait"
         >
           <div className="flex flex-col">
             <span className="font-bold text-md text-gray-800 dark:text-gray-100">

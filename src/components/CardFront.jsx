@@ -9,7 +9,8 @@ const CardFront = ({ image }) => {
           initial={{ opacity: 0, y: '-10px' }}
           animate={{ opacity: 1, y: '0' }}
           exit={{ opacity: 0, y: '10px' }}
-          transition={{ duration: 0.5, type: 'easeIn' }}
+          transition={{ duration: 0.5 }}
+          mode="wait"
           className="relative w-full h-full object-contain z-2"
           src={image}
           alt=""
