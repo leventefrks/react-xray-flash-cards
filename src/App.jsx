@@ -94,7 +94,30 @@ const App = () => {
           <SubTitle />
 
           <div className="relative flex flex-col mt-6 space-y-12 items-center justify-center">
-            <div className="flex gap-2 items-center">
+            {isLoading ? (
+              <Loader />
+            ) : (
+              <div className="max-w-[450px] w-full">
+                <ReactCardFlip
+                  isFlipped={isFlipped}
+                  flipDirection="horizontal"
+                  cardZIndex="1"
+                >
+                  <CardFront
+                    image={items[currentIndex]?.image?.fields?.file?.url}
+                  />
+
+                  <CardBack
+                    modality={items[currentIndex]?.modality}
+                    region={items[currentIndex]?.region}
+                    radiology={items[currentIndex]?.radiology}
+                    diagnose={items[currentIndex]?.diagnose}
+                  />
+                </ReactCardFlip>
+              </div>
+            )}
+
+            <div className="flex items-center justify-between gap-6 mb-6 sm:mb-0">
               <button
                 type="button"
                 className="w-6 h-6 sm:w-10 sm:h-10 hover:scale-110 transition-transform duration-150"
@@ -112,29 +135,30 @@ const App = () => {
                   aria-label="Previous item"
                 />
               </button>
-
-              {isLoading ? (
-                <Loader />
-              ) : (
-                <div className="max-w-[450px] w-full">
-                  <ReactCardFlip
-                    isFlipped={isFlipped}
-                    flipDirection="horizontal"
-                    cardZIndex="1"
-                  >
-                    <CardFront
-                      image={items[currentIndex]?.image?.fields?.file?.url}
-                    />
-
-                    <CardBack
-                      modality={items[currentIndex]?.modality}
-                      region={items[currentIndex]?.region}
-                      radiology={items[currentIndex]?.radiology}
-                      diagnose={items[currentIndex]?.diagnose}
-                    />
-                  </ReactCardFlip>
-                </div>
-              )}
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-6 ">
+                <button
+                  type="button"
+                  onClick={() => setFlip(!isFlipped)}
+                  className="group select-none flex gap-2 items-center bg-yellow-400 hover:bg-yellow-300 text-indigo-700 px-4 py-2 font-bold text-xs sm:text-md rounded-md"
+                >
+                  <FiRotateCcw
+                    className="w-4 h-4 group-hover:rotate-180 transition-transform duration-250"
+                    aria-hidden="true"
+                  />
+                  Know more
+                </button>
+                <button
+                  type="button"
+                  onClick={() => onGenerateRandomNumber()}
+                  className="group select-none flex items-center gap-2 bg-indigo-700 hover:bg-indigo-600 px-4 py-2 transition-all duration-150 text-white font-bold text-xs sm:text-md rounded-md"
+                >
+                  <GiCardRandom
+                    className="w-4 h-4 group-hover:-rotate-12"
+                    aria-hidden="true"
+                  />
+                  Random image
+                </button>
+              </div>
               <button
                 type="button"
                 className="w-6 h-6 sm:w-10 sm:h-10 hover:scale-110 transition-transform duration-150"
@@ -148,31 +172,6 @@ const App = () => {
                   className="w-6 h-6 sm:w-10 sm:h-10 dark:text-gray-100 text-gray-800"
                   aria-label="Next item"
                 />
-              </button>
-            </div>
-
-            <div className="flex flex-col gap-6 mb-6 md:mb-0 md:flex-row">
-              <button
-                type="button"
-                onClick={() => setFlip(!isFlipped)}
-                className="group select-none self-center flex gap-2 items-center bg-yellow-400 hover:bg-yellow-300 text-indigo-700 px-4 py-2 font-bold text-xs sm:text-md rounded-md"
-              >
-                <FiRotateCcw
-                  className="w-4 h-4 group-hover:rotate-180 transition-transform duration-250"
-                  aria-hidden="true"
-                />
-                Know more
-              </button>
-              <button
-                type="button"
-                onClick={() => onGenerateRandomNumber()}
-                className="group select-none flex items-center gap-2 bg-indigo-700 hover:bg-indigo-600 px-4 py-2 transition-all duration-150 text-white font-bold text-xs sm:text-md rounded-md"
-              >
-                <GiCardRandom
-                  className="w-4 h-4 group-hover:-rotate-12"
-                  aria-hidden="true"
-                />
-                Random image
               </button>
             </div>
           </div>
