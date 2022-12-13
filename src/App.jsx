@@ -15,7 +15,6 @@ import CardFront from './components/CardFront';
 import CardBack from './components/CardBack';
 
 import ReactCardFlip from 'react-card-flip';
-import { FiRotateCcw } from 'react-icons/fi';
 import { GiCardRandom } from 'react-icons/gi';
 import { MdRotateLeft } from 'react-icons/md';
 import { RxCaretLeft, RxCaretRight } from 'react-icons/rx';
@@ -115,12 +114,10 @@ const App = () => {
                     </span>
                     <span className="text-light text-sm">images</span>
                   </div>
-
                   <div className="relative flex items-center gap-2 font-bold text-gray-400 dark:text-gray-100 md:-right-8">
                     <MdRotateLeft className="h-4 w-4 sm:h-8 sm:w-8" />
                   </div>
                 </div>
-
                 <div onClick={() => setFlip(!isFlipped)}>
                   <ReactCardFlip
                     isFlipped={isFlipped}
@@ -130,7 +127,6 @@ const App = () => {
                     <CardFront
                       image={items[currentIndex]?.image?.fields?.file?.url}
                     />
-
                     <CardBack
                       modality={items[currentIndex]?.modality}
                       region={items[currentIndex]?.region}
@@ -141,7 +137,6 @@ const App = () => {
                 </div>
               </div>
             )}
-
             <div className="mb-6 flex items-center justify-between gap-6 sm:mb-0">
               <button
                 type="button"
@@ -160,31 +155,18 @@ const App = () => {
                   aria-label="Previous item"
                 />
               </button>
-              <div className="flex flex-col gap-3 sm:flex-row md:gap-6 ">
-                {/* <button
-                  type="button"
-                  onClick={() => setFlip(!isFlipped)}
-                  className="group select-none flex gap-2 items-center justify-center bg-yellow-400 hover:bg-yellow-300 text-indigo-700 px-4 py-2 font-bold text-xs sm:text-md rounded-md"
-                >
-                  <FiRotateCcw
-                    className="w-4 h-4 group-hover:rotate-180 transition-transform duration-250"
-                    aria-hidden="true"
-                  />
-                  Know more
-                </button> */}
-                <button
-                  type="button"
-                  onClick={() => onGenerateRandomNumber()}
-                  disabled={isLoading}
-                  className="sm:text-md group flex select-none items-center justify-center gap-2 rounded-md bg-indigo-700 px-4 py-2 text-xs font-bold text-white transition-all duration-150 hover:bg-indigo-600"
-                >
-                  <GiCardRandom
-                    className="h-4 w-4 group-hover:-rotate-12"
-                    aria-hidden="true"
-                  />
-                  Random image
-                </button>
-              </div>
+              <button
+                type="button"
+                onClick={() => onGenerateRandomNumber()}
+                disabled={isLoading}
+                className="sm:text-md group flex select-none items-center justify-center gap-2 rounded-md bg-indigo-700 px-4 py-2 text-xs font-bold text-white transition-all duration-150 hover:bg-indigo-600"
+              >
+                <GiCardRandom
+                  className="h-4 w-4 group-hover:-rotate-12"
+                  aria-hidden="true"
+                />
+                Random image
+              </button>
               <button
                 type="button"
                 className="h-6 w-6 transition-transform duration-150 hover:scale-110 sm:h-10 sm:w-10"
