@@ -8,6 +8,7 @@ const Loader = () => {
         className="h-6 w-6 animate-spin
                   text-gray-800
                   dark:text-white"
+        aria-hidden="true"
       />
     </div>
   );

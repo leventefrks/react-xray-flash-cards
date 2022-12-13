@@ -18,9 +18,15 @@ const ThemeButton = ({ toggleTheme, theme }) => {
       onClick={toggleTheme}
     >
       {theme === 'dark' ? (
-        <CiDark className="h-4 w-4 group-hover:hover:scale-110 sm:h-6 sm:w-6" />
+        <CiDark
+          className="h-4 w-4 group-hover:hover:scale-110 sm:h-6 sm:w-6"
+          aria-hidden="true"
+        />
       ) : (
-        <FiSun className="h-4 w-4 group-hover:hover:scale-110 sm:h-6 sm:w-6" />
+        <FiSun
+          className="h-4 w-4 group-hover:hover:scale-110 sm:h-6 sm:w-6"
+          aria-hidden="true"
+        />
       )}
     </button>
   );

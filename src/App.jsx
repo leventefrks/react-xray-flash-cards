@@ -92,7 +92,7 @@ const App = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-        className="min-w-screen min-h-screen bg-gray-50 dark:bg-black"
+        className="min-w-screen min-h-screen bg-indigo-50 dark:bg-black"
       >
         <Layout>
           <div className="relative top-4 right-2 flex justify-end gap-2 sm:gap-4">
