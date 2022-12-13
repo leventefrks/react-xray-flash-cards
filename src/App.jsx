@@ -17,6 +17,7 @@ import CardBack from './components/CardBack';
 import ReactCardFlip from 'react-card-flip';
 import { FiRotateCcw } from 'react-icons/fi';
 import { GiCardRandom } from 'react-icons/gi';
+import { MdRotateLeft } from 'react-icons/md';
 import { RxCaretLeft, RxCaretRight } from 'react-icons/rx';
 
 const GA_MEASUREMENT_ID = process.env.GA_MEASUREMENT_ID;
@@ -110,9 +111,17 @@ const App = () => {
                 className="max-w-[500px] w-full flex flex-col gap-1"
                 onClick={() => setFlip(!isFlipped)}
               >
-                <div className="font-black text-gray-500 dark:text-gray-100 text-md flex items-center gap-2">
-                  <span>{items.length > 0 ? items.length : items.length}</span>
-                  <span className="text-sm text-light">images</span>
+                <div className="flex items-center justify-between">
+                  <div className="font-bold text-gray-500 dark:text-gray-100 text-md flex items-center gap-2">
+                    <span>
+                      {items.length > 0 ? items.length : items.length}
+                    </span>
+                    <span className="text-sm text-light">images</span>
+                  </div>
+
+                  <div className="relative md:-right-8 flex gap-2 items-center text-gray-600 dark:text-gray-100 font-bold">
+                    <MdRotateLeft className="w-8 h-8 group-hover:rotate-180 transition-transform duration-250" />
+                  </div>
                 </div>
 
                 <ReactCardFlip
@@ -153,7 +162,7 @@ const App = () => {
                 />
               </button>
               <div className="flex flex-col sm:flex-row gap-3 md:gap-6 ">
-                <button
+                {/* <button
                   type="button"
                   onClick={() => setFlip(!isFlipped)}
                   className="group select-none flex gap-2 items-center justify-center bg-yellow-400 hover:bg-yellow-300 text-indigo-700 px-4 py-2 font-bold text-xs sm:text-md rounded-md"
@@ -163,7 +172,7 @@ const App = () => {
                     aria-hidden="true"
                   />
                   Know more
-                </button>
+                </button> */}
                 <button
                   type="button"
                   onClick={() => onGenerateRandomNumber()}
