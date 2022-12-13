@@ -107,9 +107,14 @@ const App = () => {
               <Loader />
             ) : (
               <div
-                className="max-w-[450px] w-full"
+                className="max-w-[450px] w-full flex flex-col gap-1"
                 onClick={() => setFlip(!isFlipped)}
               >
+                <div className="font-black text-gray-500 dark:text-gray-100 text-md flex items-center gap-2">
+                  <span>{items.length > 0 ? items.length : items.length}</span>
+                  <span className="text-sm text-light">images</span>
+                </div>
+
                 <ReactCardFlip
                   isFlipped={isFlipped}
                   flipDirection="horizontal"
