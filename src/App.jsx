@@ -118,7 +118,10 @@ const App = () => {
                     <MdRotateLeft className="h-4 w-4 sm:h-8 sm:w-8" />
                   </div>
                 </div>
-                <div onClick={() => setFlip(!isFlipped)}>
+                <div
+                  className="cursor-pointer"
+                  onClick={() => setFlip(!isFlipped)}
+                >
                   <ReactCardFlip
                     isFlipped={isFlipped}
                     flipDirection="horizontal"
