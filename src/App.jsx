@@ -107,7 +107,7 @@ const App = () => {
               <Loader />
             ) : (
               <div
-                className="max-w-[450px] w-full flex flex-col gap-1"
+                className="max-w-[500px] w-full flex flex-col gap-1"
                 onClick={() => setFlip(!isFlipped)}
               >
                 <div className="font-black text-gray-500 dark:text-gray-100 text-md flex items-center gap-2">
