@@ -93,7 +93,7 @@ const App = () => {
           <Title />
           <SubTitle />
 
-          <div className="relative flex flex-col mt-6 space-y-12 items-center justify-center">
+          <div className="relative flex flex-col mt-6 space-y-6 items-center justify-center">
             {isLoading ? (
               <Loader />
             ) : (
