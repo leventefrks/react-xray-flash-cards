@@ -106,6 +106,7 @@ const App = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 className="max-w-[450px] w-full"
+                onClick={() => setFlip(!isFlipped)}
               >
                 <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
                   <CardFront
