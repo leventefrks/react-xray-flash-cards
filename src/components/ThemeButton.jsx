@@ -12,15 +12,15 @@ const ThemeButton = ({ toggleTheme, theme }) => {
           ? `${ariaLabelPrefix} light mode`
           : `${ariaLabelPrefix} dark mode`
       }`}
-      className={`group flex items-center rounded-md transition-all duration-150 p-2 ${
+      className={`group flex items-center rounded-md p-2 transition-all duration-150 ${
         theme === 'dark' ? 'text-white' : 'text-gray-800'
       }`}
       onClick={toggleTheme}
     >
       {theme === 'dark' ? (
-        <CiDark className="h-4 w-4 sm:w-6 sm:h-6 group-hover:hover:scale-110" />
+        <CiDark className="h-4 w-4 group-hover:hover:scale-110 sm:h-6 sm:w-6" />
       ) : (
-        <FiSun className="h-4 w-4 sm:w-6 sm:h-6 group-hover:hover:scale-110" />
+        <FiSun className="h-4 w-4 group-hover:hover:scale-110 sm:h-6 sm:w-6" />
       )}
     </button>
   );

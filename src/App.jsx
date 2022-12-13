@@ -92,7 +92,7 @@ const App = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-        className="min-h-screen min-w-screen dark:bg-black bg-gray-50"
+        className="min-w-screen min-h-screen bg-gray-50 dark:bg-black"
       >
         <Layout>
           <div className="relative top-4 right-2 flex justify-end gap-2 sm:gap-4">
@@ -103,24 +103,24 @@ const App = () => {
           <Title />
           <SubTitle />
 
-          <div className="relative flex flex-col mt-6 space-y-6 items-center justify-center">
+          <div className="relative mt-6 flex flex-col items-center justify-center space-y-6">
             {isLoading ? (
               <Loader />
             ) : (
               <div
-                className="max-w-[500px] w-full flex flex-col gap-1"
+                className="flex w-full max-w-[500px] flex-col gap-1"
                 onClick={() => setFlip(!isFlipped)}
               >
                 <div className="flex items-center justify-between">
-                  <div className="font-bold text-gray-500 dark:text-gray-100 text-md flex items-center gap-2">
+                  <div className="text-md flex items-center gap-2 font-bold text-gray-500 dark:text-gray-100">
                     <span>
                       {items.length > 0 ? items.length : items.length}
                     </span>
-                    <span className="text-sm text-light">images</span>
+                    <span className="text-light text-sm">images</span>
                   </div>
 
-                  <div className="relative md:-right-8 flex gap-2 items-center text-gray-600 dark:text-gray-100 font-bold">
-                    <MdRotateLeft className="w-4 h-4 sm:w-8 sm:h-8" />
+                  <div className="relative flex items-center gap-2 font-bold text-gray-600 dark:text-gray-100 md:-right-8">
+                    <MdRotateLeft className="h-4 w-4 sm:h-8 sm:w-8" />
                   </div>
                 </div>
 
@@ -143,10 +143,10 @@ const App = () => {
               </div>
             )}
 
-            <div className="flex items-center justify-between gap-6 mb-6 sm:mb-0">
+            <div className="mb-6 flex items-center justify-between gap-6 sm:mb-0">
               <button
                 type="button"
-                className="w-6 h-6 sm:w-10 sm:h-10 hover:scale-110 transition-transform duration-150"
+                className="h-6 w-6 transition-transform duration-150 hover:scale-110 sm:h-10 sm:w-10"
                 disabled={currentIndex === 0}
                 onClick={() =>
                   setCurrentIndex(prevIndex =>
@@ -155,13 +155,13 @@ const App = () => {
                 }
               >
                 <RxCaretLeft
-                  className={`w-6 h-6 sm:w-10 sm:h-10 dark:text-gray-100 text-gray-800 ${
+                  className={`h-6 w-6 text-gray-800 dark:text-gray-100 sm:h-10 sm:w-10 ${
                     currentIndex === 0 && 'cursor-not-allowed'
                   } `}
                   aria-label="Previous item"
                 />
               </button>
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-6 ">
+              <div className="flex flex-col gap-3 sm:flex-row md:gap-6 ">
                 {/* <button
                   type="button"
                   onClick={() => setFlip(!isFlipped)}
@@ -177,10 +177,10 @@ const App = () => {
                   type="button"
                   onClick={() => onGenerateRandomNumber()}
                   disabled={isLoading}
-                  className="group select-none flex items-center justify-center gap-2 bg-indigo-700 hover:bg-indigo-600 px-4 py-2 transition-all duration-150 text-white font-bold text-xs sm:text-md rounded-md"
+                  className="sm:text-md group flex select-none items-center justify-center gap-2 rounded-md bg-indigo-700 px-4 py-2 text-xs font-bold text-white transition-all duration-150 hover:bg-indigo-600"
                 >
                   <GiCardRandom
-                    className="w-4 h-4 group-hover:-rotate-12"
+                    className="h-4 w-4 group-hover:-rotate-12"
                     aria-hidden="true"
                   />
                   Random image
@@ -188,7 +188,7 @@ const App = () => {
               </div>
               <button
                 type="button"
-                className="w-6 h-6 sm:w-10 sm:h-10 hover:scale-110 transition-transform duration-150"
+                className="h-6 w-6 transition-transform duration-150 hover:scale-110 sm:h-10 sm:w-10"
                 onClick={() =>
                   setCurrentIndex(prevIndex =>
                     items.length - 1 <= prevIndex ? 0 : prevIndex + 1
@@ -196,7 +196,7 @@ const App = () => {
                 }
               >
                 <RxCaretRight
-                  className="w-6 h-6 sm:w-10 sm:h-10 dark:text-gray-100 text-gray-800"
+                  className="h-6 w-6 text-gray-800 dark:text-gray-100 sm:h-10 sm:w-10"
                   aria-label="Next item"
                 />
               </button>

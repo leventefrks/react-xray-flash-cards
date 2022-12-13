@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 const CardFront = ({ image }) => {
   return (
-    <div className="h-[450px] overflow-hidden p-2 sm:p-4 select-none shadow-xl bg-white dark:bg-black dark:shadow-none rounded-md">
+    <div className="h-[450px] select-none overflow-hidden rounded-md bg-white p-2 shadow-xl dark:bg-black dark:shadow-none sm:p-4">
       <AnimatePresence>
         <motion.img
           key={image}
@@ -11,7 +11,7 @@ const CardFront = ({ image }) => {
           exit={{ opacity: 0, y: '10px' }}
           transition={{ duration: 0.5 }}
           mode="wait"
-          className="relative w-full h-full object-contain z-2"
+          className="z-2 relative h-full w-full object-contain"
           src={image}
           alt=""
         />
