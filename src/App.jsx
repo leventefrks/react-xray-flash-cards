@@ -1,12 +1,10 @@
 import ReactGA from 'react-ga4';
-import { sendAnalytics } from './analytics';
-import random from 'random';
-import { useState, useEffect } from 'react';
 import client from './api';
-import ReactCardFlip from 'react-card-flip';
-import { FiRotateCcw } from 'react-icons/fi';
-import { GiCardRandom } from 'react-icons/gi';
-import { RxCaretLeft, RxCaretRight } from 'react-icons/rx';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import random from 'random';
+import { sendAnalytics } from './analytics';
+
 import Layout from './layout/Layout';
 import Title from './components/Title';
 import SubTitle from './components/SubTitle';
@@ -15,6 +13,11 @@ import ThemeButton from './components/ThemeButton';
 import BuyMeACoffeeButton from './components/BuyMeACoffeeButton';
 import CardFront from './components/CardFront';
 import CardBack from './components/CardBack';
+
+import ReactCardFlip from 'react-card-flip';
+import { FiRotateCcw } from 'react-icons/fi';
+import { GiCardRandom } from 'react-icons/gi';
+import { RxCaretLeft, RxCaretRight } from 'react-icons/rx';
 
 const GA_MEASUREMENT_ID = process.env.GA_MEASUREMENT_ID;
 
@@ -97,12 +100,14 @@ const App = () => {
             {isLoading ? (
               <Loader />
             ) : (
-              <div className="max-w-[450px] w-full">
-                <ReactCardFlip
-                  isFlipped={isFlipped}
-                  flipDirection="horizontal"
-                  cardZIndex="1"
-                >
+              <motion.div
+                layout
+                initial={{ opacity: 0, y: '-10px' }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="max-w-[450px] w-full"
+              >
+                <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
                   <CardFront
                     image={items[currentIndex]?.image?.fields?.file?.url}
                   />
@@ -114,7 +119,7 @@ const App = () => {
                     diagnose={items[currentIndex]?.diagnose}
                   />
                 </ReactCardFlip>
-              </div>
+              </motion.div>
             )}
 
             <div className="flex items-center justify-between gap-6 mb-6 sm:mb-0">

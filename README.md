@@ -16,5 +16,6 @@ She needed a dead simple application which helps her preparing for her upcoming 
 - React GA 4 (for tracking)
 - Random (for generating numbers)
 - React Icons
+- Framer Motion (for tiny micro animations)
 - TailwindCSS
 - Contentful (images & descriptions are coming from here)
