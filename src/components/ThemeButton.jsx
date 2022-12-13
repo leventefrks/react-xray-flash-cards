@@ -12,7 +12,7 @@ const ThemeButton = ({ toggleTheme, theme }) => {
           ? `${ariaLabelPrefix} light mode`
           : `${ariaLabelPrefix} dark mode`
       }`}
-      className={`group flex items-center rounded-md p-2 transition-all duration-150 ${
+      className={`group flex items-center rounded-md bg-white p-2  transition-all duration-150 dark:bg-black ${
         theme === 'dark' ? 'text-gray-100' : 'text-gray-600'
       }`}
       onClick={toggleTheme}

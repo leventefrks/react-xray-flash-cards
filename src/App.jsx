@@ -149,7 +149,7 @@ const App = () => {
                 }
               >
                 <RxCaretLeft
-                  className={`h-6 w-6 text-gray-800 dark:text-gray-100 sm:h-10 sm:w-10 ${
+                  className={`h-6 w-6 rounded-full bg-white text-gray-600 dark:bg-black dark:text-gray-100 sm:h-10 sm:w-10 ${
                     currentIndex === 0 && 'cursor-not-allowed'
                   } `}
                   aria-label="Previous item"
@@ -169,7 +169,7 @@ const App = () => {
               </button>
               <button
                 type="button"
-                className="h-6 w-6 transition-transform duration-150 hover:scale-110 sm:h-10 sm:w-10"
+                className="h-6 w-6 rounded-full bg-white transition-transform duration-150 hover:scale-110 dark:bg-black sm:h-10 sm:w-10"
                 onClick={() =>
                   setCurrentIndex(prevIndex =>
                     items.length - 1 <= prevIndex ? 0 : prevIndex + 1
