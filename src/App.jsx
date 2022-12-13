@@ -107,10 +107,7 @@ const App = () => {
             {isLoading ? (
               <Loader />
             ) : (
-              <div
-                className="flex w-full max-w-[500px] flex-col gap-1"
-                onClick={() => setFlip(!isFlipped)}
-              >
+              <div className="flex w-full max-w-[500px] flex-col gap-1">
                 <div className="flex items-center justify-between">
                   <div className="text-md flex items-center gap-2 font-bold text-gray-500 dark:text-gray-100">
                     <span>
@@ -124,22 +121,24 @@ const App = () => {
                   </div>
                 </div>
 
-                <ReactCardFlip
-                  isFlipped={isFlipped}
-                  flipDirection="horizontal"
-                  cardZIndex="1"
-                >
-                  <CardFront
-                    image={items[currentIndex]?.image?.fields?.file?.url}
-                  />
+                <div onClick={() => setFlip(!isFlipped)}>
+                  <ReactCardFlip
+                    isFlipped={isFlipped}
+                    flipDirection="horizontal"
+                    cardZIndex="1"
+                  >
+                    <CardFront
+                      image={items[currentIndex]?.image?.fields?.file?.url}
+                    />
 
-                  <CardBack
-                    modality={items[currentIndex]?.modality}
-                    region={items[currentIndex]?.region}
-                    radiology={items[currentIndex]?.radiology}
-                    diagnose={items[currentIndex]?.diagnose}
-                  />
-                </ReactCardFlip>
+                    <CardBack
+                      modality={items[currentIndex]?.modality}
+                      region={items[currentIndex]?.region}
+                      radiology={items[currentIndex]?.radiology}
+                      diagnose={items[currentIndex]?.diagnose}
+                    />
+                  </ReactCardFlip>
+                </div>
               </div>
             )}
 
