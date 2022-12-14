@@ -102,7 +102,7 @@ const App = () => {
           <Title />
           <SubTitle />
 
-          <div className="relative mt-6 flex flex-col items-center justify-center space-y-6">
+          <div className="relative mt-6 flex flex-col items-center justify-center space-y-8">
             {isLoading ? (
               <Loader />
             ) : (
@@ -140,10 +140,10 @@ const App = () => {
                 </div>
               </div>
             )}
-            <div className="mb-6 flex items-center justify-between gap-6 sm:mb-0">
+            <div className="flex items-center justify-between gap-6">
               <button
                 type="button"
-                className="h-10 w-10  rounded-full bg-white text-gray-600 transition-transform  duration-150 hover:scale-110  dark:bg-black dark:text-gray-100 sm:h-12 sm:h-12 sm:w-12 sm:w-12"
+                className="h-9 w-9 rounded-full bg-white text-gray-600 transition-transform duration-150 hover:scale-110 dark:bg-black dark:text-gray-100 sm:h-11 sm:w-11"
                 disabled={currentIndex === 0}
                 onClick={() =>
                   setCurrentIndex(prevIndex =>
@@ -172,7 +172,7 @@ const App = () => {
               </button>
               <button
                 type="button"
-                className="h-10 w-10 rounded-full bg-white transition-transform duration-150 hover:scale-110 dark:bg-black sm:h-12 sm:w-12"
+                className="h-9 w-9 rounded-full bg-white text-gray-600 transition-transform duration-150 hover:scale-110 dark:bg-black dark:text-gray-100 sm:h-11 sm:w-11"
                 onClick={() =>
                   setCurrentIndex(prevIndex =>
                     items.length - 1 <= prevIndex ? 0 : prevIndex + 1
