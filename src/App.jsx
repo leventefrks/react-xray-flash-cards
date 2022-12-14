@@ -1,5 +1,5 @@
 import ReactGA from 'react-ga4';
-import client from './api';
+import { fetchImages } from './api';
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import random from 'random';
@@ -32,14 +32,10 @@ const App = () => {
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
-    const fetchItems = async () => {
+    const onMounted = async () => {
       setLoading(true);
       try {
-        const { items } = await client.getEntries({
-          content_type: 'xray',
-          select: 'fields',
-        });
-
+        const { items } = await fetchImages();
         const sanitizedItems = items.map(item => {
           return {
             ...item.fields,
@@ -54,7 +50,7 @@ const App = () => {
       }
     };
 
-    fetchItems();
+    onMounted();
   }, []);
 
   useEffect(() => {
