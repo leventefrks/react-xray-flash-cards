@@ -94,7 +94,7 @@ const App = () => {
         className="min-w-screen min-h-screen bg-indigo-50 dark:bg-black"
       >
         <Layout>
-          <div className="relative top-4 right-2 flex justify-end gap-2 sm:gap-4">
+          <div className="relative top-4 right-2 flex justify-end gap-6 sm:gap-8">
             <BuyMeACoffeeButton />
             <ThemeButton toggleTheme={toggleTheme} theme={theme} />
           </div>
@@ -115,7 +115,7 @@ const App = () => {
                     <span className="text-light text-sm">images</span>
                   </div>
                   <div className="relative flex items-center gap-2 font-bold text-gray-400 dark:text-gray-100 md:-right-8">
-                    <MdRotateLeft className="h-4 w-4 sm:h-8 sm:w-8" />
+                    <MdRotateLeft className="h-6 w-6 sm:h-8 sm:w-8" />
                   </div>
                 </div>
                 <div
@@ -143,7 +143,7 @@ const App = () => {
             <div className="mb-6 flex items-center justify-between gap-6 sm:mb-0">
               <button
                 type="button"
-                className="h-6 w-6 transition-transform duration-150 hover:scale-110 sm:h-10 sm:w-10"
+                className="h-10 w-10  rounded-full bg-white text-gray-600 transition-transform  duration-150 hover:scale-110  dark:bg-black dark:text-gray-100 sm:h-12 sm:h-12 sm:w-12 sm:w-12"
                 disabled={currentIndex === 0}
                 onClick={() =>
                   setCurrentIndex(prevIndex =>
@@ -152,7 +152,7 @@ const App = () => {
                 }
               >
                 <RxCaretLeft
-                  className={`h-6 w-6 rounded-full bg-white text-gray-600 dark:bg-black dark:text-gray-100 sm:h-10 sm:w-10 ${
+                  className={`h-full w-full ${
                     currentIndex === 0 && 'cursor-not-allowed'
                   } `}
                   aria-label="Previous item"
@@ -172,7 +172,7 @@ const App = () => {
               </button>
               <button
                 type="button"
-                className="h-6 w-6 rounded-full bg-white transition-transform duration-150 hover:scale-110 dark:bg-black sm:h-10 sm:w-10"
+                className="h-10 w-10 rounded-full bg-white transition-transform duration-150 hover:scale-110 dark:bg-black sm:h-12 sm:w-12"
                 onClick={() =>
                   setCurrentIndex(prevIndex =>
                     items.length - 1 <= prevIndex ? 0 : prevIndex + 1
@@ -180,7 +180,7 @@ const App = () => {
                 }
               >
                 <RxCaretRight
-                  className="h-6 w-6 text-gray-800 dark:text-gray-100 sm:h-10 sm:w-10"
+                  className="h-full w-full"
                   aria-label="Next item"
                 />
               </button>
