@@ -114,7 +114,7 @@ const App = () => {
                     </span>
                     <span className="text-light text-sm">images</span>
                   </div>
-                  <div className="relative flex items-center gap-2 font-bold text-gray-400 dark:text-gray-100 md:-right-8">
+                  <div className="relative flex items-center gap-2 font-bold text-gray-300 dark:text-gray-50 md:-right-8">
                     <MdRotateLeft className="h-6 w-6 sm:h-8 sm:w-8" />
                   </div>
                 </div>
