@@ -8,7 +8,7 @@ She needed a dead simple application which helps her preparing for her upcoming 
 
 [Demo](https://xray-memory-test.netlify.app)
 
-## Tech Stack & Packages
+## Tech Stack & Plugins
 
 - Vite
 - React
@@ -18,4 +18,5 @@ She needed a dead simple application which helps her preparing for her upcoming 
 - React Icons
 - Framer Motion (for tiny micro animations)
 - TailwindCSS
+- TailwindCSS Prettier Plugin
 - Contentful (images & descriptions are coming from here)
