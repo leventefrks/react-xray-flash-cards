@@ -9,6 +9,7 @@ export const fetchImages = async () => {
   const { items } = await client.getEntries({
     content_type: 'xray',
     select: 'fields',
+    order: 'sys.createdAt',
   });
 
   return { items };
