@@ -6,11 +6,13 @@ export const client = createClient({
 });
 
 export const fetchImages = async () => {
-  const { items } = await client.getEntries({
+  const entries = await client.getEntries({
     content_type: 'xray',
     select: 'fields',
     order: 'sys.createdAt',
   });
 
-  return { items };
+  if (!entries.items) console.log('Failed to load xray content types');
+
+  return entries.items;
 };

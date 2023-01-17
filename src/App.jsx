@@ -34,20 +34,15 @@ const App = () => {
   useEffect(() => {
     const onMounted = async () => {
       setLoading(true);
-      try {
-        const { items } = await fetchImages();
-        const sanitizedItems = items.map(item => {
-          return {
-            ...item.fields,
-          };
-        });
+      const items = await fetchImages();
+      const sanitizedItems = items.map(item => {
+        return {
+          ...item.fields,
+        };
+      });
 
-        setItems(sanitizedItems);
-      } catch (error) {
-        console.error('Failed to fetch items', error);
-      } finally {
-        setLoading(false);
-      }
+      setItems(sanitizedItems);
+      setLoading(false);
     };
 
     onMounted();
