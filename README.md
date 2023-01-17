@@ -8,6 +8,12 @@ She needed a dead simple application which helps her preparing for her upcoming 
 
 [Demo](https://xray-memory-test.netlify.app)
 
+## Environment Variables
+
+VITE_SPACE_ID: The Space ID you got from Contentful Settings / Api
+VITE_ACCESS_TOKEN: The Content Delivery API - access tokenyou got from Contentful Settings / Api
+GA_MEASUREMENT_ID: The Measurement ID you got from Google Analytics
+
 ## Tech Stack & Plugins
 
 - Vite
